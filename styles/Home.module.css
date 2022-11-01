@@ -1,0 +1,13 @@
+.GradientBg {
+	/*@apply fixed h-screen bg-gray-300 top-40 -z-30 rotate-45;*/
+	width: 100%;
+	height: 150vh;
+	background-color: grey;
+	z-index: -30;
+	left: -30%;
+	position: fixed;
+	top: 0;
+	transform: rotate(55deg);
+	@apply bg-secondary;
+
+}

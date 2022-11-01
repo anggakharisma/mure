@@ -1,0 +1,4 @@
+.hero {
+	height: 70vh;
+	@apply flex w-10/12 m-auto p-6;
+}

@@ -1,12 +1,9 @@
 .NavLink {
-	@apply mx-6 font-semibold text-sm;
+	@apply mx-8 font-semibold text-sm hover:bg-secondary p-1 transition-all;
 	position: relative;
 }
 
 .NavLinkContainer {
-	@apply flex my-auto bg-primary text-white py-4 px-16 rounded-3xl;
-	border-radius: 120px;
+	@apply flex my-auto bg-primary text-white py-4 px-16 rounded-full;
 	position: relative;
-	box-shadow: inset -8px -6px 0 0 #FFFFC2, 10px 8px 0 #F5A9CB;
-	z-index: 10;
 }

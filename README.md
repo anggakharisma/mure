@@ -1,2 +1,2 @@
 # MURE
-Soundcloud clone but weeb
+Soundcloud clone with nextjs

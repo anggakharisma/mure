@@ -7,6 +7,6 @@
 	position: fixed;
 	top: 0;
 	transform: rotate(55deg);
-	@apply bg-secondary;
+	@apply bg-slate-50;
 
 }

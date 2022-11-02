@@ -14,10 +14,10 @@ const Nav = () => {
 					<Link href="/top-artists">TOP ARTISTS</Link>
 				</li>
 				<li className={NavStyles.NavLink}>
-					<Link href="/top-songs">TOP SONGS</Link>
+					<Link href="/top-songs">CHARTS</Link>
 				</li>
 				<li className={NavStyles.NavLink}>
-					<Link href="/about">ABOUT</Link>
+					<Link href="/about">TOP SONGS</Link>
 				</li>
 			</ul>
 		</div>

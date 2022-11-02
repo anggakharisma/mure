@@ -1,4 +1,19 @@
 .hero {
-	height: 70vh;
-	@apply flex w-10/12 m-auto p-6;
+	height: 63vh;
+	@apply flex w-10/12 m-auto p-6 mt-14;
+	width: 70vw;
+}
+
+.hero_image_container {
+	@apply w-3/4 relative m-auto;
+	clip-path: circle(42% at 50% 50%);
+	height: 100%;
+	width: 100%;
+	background-color: #FFFFC2;
+	border-bottom: 24px solid #FFFFC2;
+}
+
+.hero_image_container img {
+	clip-path: circle(42% at 50% 50%);
+	height: 100%;
 }

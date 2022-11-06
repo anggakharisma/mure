@@ -1,0 +1,4 @@
+.SongTitle {
+  @apply font-semibold text-gray-500 text-lg;
+  letter-spacing: 4px;
+}

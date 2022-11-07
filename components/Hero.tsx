@@ -13,7 +13,7 @@ const Hero = () => {
         />
       </div>
       <div className="m-auto">
-        <h1 className="text-8xl ml-28 w-2/4 leading-snug text-primary font-bold  tracking-widest">
+        <h1 className="text-8xl ml-28 w-2/4 leading-snug text-primary font-bold tracking-widest">
           SHARE LISTEN DISCOVER
         </h1>
       </div>
@@ -22,4 +22,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Info = () => {
   return (
-    <div className="flex">
+    <div className="flex w-1/4">
       <div className="relative mr-8 rounded-full">
         <Image
           className="rounded-full"

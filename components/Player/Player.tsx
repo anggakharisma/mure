@@ -1,13 +1,14 @@
 import PlayerStyles from "../../styles/Player.module.css";
+import { Control } from "./Control";
 import { Info } from "./Info";
 
 export const Player = () => {
   return (
     <div className={PlayerStyles.PlayerContainer}>
-      <div className="m-auto w-10/12">
+      <div className="m-auto w-10/12 flex">
         <Info />
+        <Control />
       </div>
     </div>
   );
 };
-

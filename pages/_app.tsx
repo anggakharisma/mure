@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Nav from "../components/Nav";
 import Head from "next/head";
 import { Player } from "../components/Player/Player";
+import HomeStyle from "../styles/Home.module.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>MURE</title>
       </Head>
       <Nav />
+      <div className={HomeStyle.GradientBg}></div>
       <Component {...pageProps} />
       <Player />
     </>

@@ -1,19 +1,19 @@
-export const route: { name: string; to: string }[] = [
+const route: { id: number; name: string; to: string }[] = [
   {
+    id: 0,
     name: "HOME",
     to: "/home",
   },
   {
-    name: "TOP ARTISTS",
-    to: "/top-artists",
-  },
-  {
+    id: 1,
     name: "CHARTS",
     to: "/charts",
   },
   {
-    name: "CHARTS",
-    to: "/charts",
+    id: 2,
+    name: "SIGN IN",
+    to: "/sign-in",
   },
 ];
 
+export default route;

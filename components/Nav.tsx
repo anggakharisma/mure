@@ -15,7 +15,7 @@ const Nav = () => {
         {route.map((item) => {
           return (
             <li className={NavStyles.NavLink} key={item.id}>
-              <Link href="/">{item.name}</Link>
+              <Link href={item.to}>{item.name}</Link>
             </li>
           );
         })}

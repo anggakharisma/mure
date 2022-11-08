@@ -1,6 +1,6 @@
 .hero {
 	height: 63vh;
-	@apply flex w-10/12 m-auto p-6 mt-20;
+	@apply flex w-10/12 m-auto p-6 mt-16;
 	width: 70vw;
 }
 

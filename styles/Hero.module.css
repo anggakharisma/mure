@@ -1,20 +1,20 @@
 .hero {
-	height: 63vh;
-	@apply flex w-10/12 m-auto p-6 mt-16;
-	width: 70vw;
+  height: 63vh;
+  @apply flex w-10/12 m-auto p-6 mt-16 relative;
+  width: 70vw;
 }
 
 .hero_image_container {
-	@apply w-3/4 relative m-auto;
-	clip-path: circle(42% at 50% 50%);
+  @apply w-3/4 relative m-auto;
+  clip-path: circle(42% at 50% 50%);
   min-width: 40%;
-	height: 100%;
-	width: 100%;
-	background-color: #FFFFC2;
-	border-bottom: 24px solid #FFFFC2;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffc2;
+  border-bottom: 24px solid #ffffc2;
 }
 
 .hero_image_container img {
-	clip-path: circle(42% at 50% 50%);
-	height: 100%;
+  clip-path: circle(42% at 50% 50%);
+  height: 100%;
 }

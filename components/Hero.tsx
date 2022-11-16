@@ -5,22 +5,24 @@ import Triangle from "./Triangle";
 const Hero = () => {
   return (
     <div className={HeroStyles.hero}>
-      <Triangle color="#9CCFE8" width={104} position="top-0 right-10" />
-      <div className="absolute top-16 right-48">
-        <svg
-          width="50"
-          height="104"
-          viewBox="0 0 90 104"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4.02851 97.7448L4.02851 6.81218L82.7785 52.2785L4.02851 97.7448Z"
-            stroke="#00FFB3"
-            stroke-width="9"
-          />
-        </svg>
-      </div>
+      <Triangle
+        color="#9CCFE8"
+        strokeWidth={7}
+        width={104}
+        position="top-0 right-10"
+      />
+      <Triangle
+        color="#00FFB3"
+        strokeWidth={14}
+        width={50}
+        position="top-18 right-52"
+      />
+      <Triangle
+        color="#F5A9CB"
+        strokeWidth={7}
+        width={104}
+        position="right-1/2 bottom-0"
+      />
 
       <div className={HeroStyles.hero_image_container}>
         <Image

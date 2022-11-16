@@ -2,13 +2,15 @@ const Triangle = ({
   color,
   width,
   position,
+  strokeWidth,
 }: {
   color: string;
   width: number;
   position: string;
+  strokeWidth: number;
 }) => {
   return (
-    <div className={`absolute ${position}`}>
+    <div className={`example-red absolute ${position}`}>
       <svg
         width={width}
         height="104"
@@ -19,7 +21,7 @@ const Triangle = ({
         <path
           d="M4.02851 97.7448L4.02851 6.81218L82.7785 52.2785L4.02851 97.7448Z"
           stroke={color}
-          stroke-width="7"
+          strokeWidth={strokeWidth}
         />
       </svg>
     </div>

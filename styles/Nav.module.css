@@ -1,5 +1,6 @@
 .NavLink {
 	@apply mx-8 font-semibold text-sm hover:bg-secondary p-1 transition-all;
+  letter-spacing: 0.5px;
 	position: relative;
 }
 

@@ -7,7 +7,7 @@ const route: { id: number; name: string; to: string }[] = [
   {
     id: 1,
     name: "CHARTS",
-    to: "/charts",
+    to: "#charts",
   },
   {
     id: 2,

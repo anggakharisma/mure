@@ -39,12 +39,7 @@ export const Control = () => {
         >
           pause {playerState}
         </p>
-        <div
-          className="relative hover:cursor-pointer"
-          onClick={() => {
-            audioRef.current!.volume = 0;
-          }}
-        >
+        <div className="relative hover:cursor-pointer">
           <Image src="/images/next.svg" width={40} height={40} />
         </div>
       </div>

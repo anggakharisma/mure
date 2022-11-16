@@ -1,4 +1,4 @@
 .PlayerContainer {
   @apply bg-white fixed bottom-0 right-0 left-0 p-4 m-auto flex;
-  box-shadow: 0px -2px 4px 4px rgba(0, 0, 0, 0.075);
+  box-shadow: 0px -1px 4px 4px #F1F1F1;
 }

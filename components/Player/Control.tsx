@@ -30,6 +30,7 @@ export const Control = () => {
               playerState === PLAYER_STATE.PAUSE
             ) {
               audioRef.current?.play();
+              audioRef.current!.volume = 0.2;
               setPlayerState(PLAYER_STATE.PLAY);
             } else {
               audioRef.current?.pause();
@@ -37,7 +38,9 @@ export const Control = () => {
             }
           }}
         >
-          pause {playerState}
+          {playerState == PLAYER_STATE.PAUSE || playerState == PLAYER_STATE.STOP
+            ? "pl"
+            : "pl"}
         </p>
         <div className="relative hover:cursor-pointer">
           <Image src="/images/next.svg" width={40} height={40} />

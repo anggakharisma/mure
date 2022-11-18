@@ -1,12 +1,11 @@
 .GradientBg {
-  width: 85%;
-  height: 110vh;
+  width: 150vw;
+  height: 130vh;
   background-color: grey;
   z-index: -30;
-  left: -25%;
+  left: -55%;
   position: absolute;
-  top: 0;
-  transform: rotate(55deg);
+  transform: rotate(60deg);
   background-image: linear-gradient(#c0ffe8, #f4c9ff);
 }
 

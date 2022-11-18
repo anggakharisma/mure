@@ -46,7 +46,7 @@ export const Control = () => {
           <Image src="/images/next.svg" width={40} height={40} />
         </div>
       </div>
-      <div className="w-3/4 m-auto bg-gray-200 h-2"></div>
+      <div className="w-3/4 m-auto bg-gray-200 h-1"></div>
     </div>
   );
 };

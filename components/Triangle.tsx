@@ -10,7 +10,7 @@ const Triangle = ({
   strokeWidth: number;
 }) => {
   return (
-    <div className={`example-red absolute ${position}`}>
+    <div className={`spin absolute ${position}`}>
       <svg
         width={width}
         height="104"

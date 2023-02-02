@@ -32,8 +32,8 @@ const Hero = () => {
           objectFit="contain"
         />
       </div>
-      <div className="m-auto z-30">
-        <h1 className="text-8xl ml-28 w-2/4 leading-snug text-primary font-bold tracking-widest z-30">
+      <div className="z-30 m-auto">
+        <h1 className="z-30 w-2/4 font-bold leading-snug tracking-widest text-8xl ml-28 text-primary">
           SHARE LISTEN DISCOVER
         </h1>
       </div>

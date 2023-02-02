@@ -20,7 +20,7 @@ body {
   }
 }
 
-.example-red {
+.spin {
   animation-name: spin;
   animation-duration: 7s;
   animation-direction: linear;

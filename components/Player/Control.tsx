@@ -22,18 +22,11 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 		window.addEventListener('keydown', function (e) {
 			if (e.code == "Space" && e.target == document.body) e.preventDefault();
 		})
-		window.addEventListener('keyup', (e) => {
+		document.addEventListener('keyup', (e) => {
 			if (e.code == "Space") {
-				if (
-					playerState === PLAYER_STATE.STOP ||
-					playerState === PLAYER_STATE.PAUSE
-				) {
-					audioRef.current!.play();
-					setPlayerState(PLAYER_STATE.PLAY);
-				} else {
-					audioRef.current!.pause();
-					setPlayerState(PLAYER_STATE.PAUSE);
-				}
+				setTimeout(() => {
+					playControllerAudio();
+				}, 150);
 			}
 		})
 		audioRef.current!.volume = Number(volume)
@@ -72,15 +65,14 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 	}
 
 	const playControllerAudio = () => {
-		audioRef.current!.volume = volume;
 		if (
 			playerState === PLAYER_STATE.STOP ||
 			playerState === PLAYER_STATE.PAUSE
 		) {
-			audioRef.current?.play();
+			audioRef.current!.play();
 			setPlayerState(PLAYER_STATE.PLAY);
 		} else {
-			audioRef.current?.pause();
+			audioRef.current!.pause();
 			setPlayerState(PLAYER_STATE.PAUSE);
 		}
 	}

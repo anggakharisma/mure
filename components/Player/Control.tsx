@@ -39,7 +39,7 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 	}, [mouseDownSlider, playerState, setPlayerState, songProgress, volume])
 
 
-	const fmtTime = (second: number) => {
+	const fmtTime = (second: number): string => {
 		const d = new Date(0);
 
 		if (second > 0) {
@@ -50,7 +50,7 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 		return d.toISOString().slice(14, 19);
 	};
 
-	const onTimeUpdateAudio = () => {
+	const onTimeUpdateAudio = (): void => {
 		if (!mouseDownSlider) {
 			setSongProgress(audioRef.current!.currentTime / audioRef.current!.duration * 100);
 			setCurrentTime(fmtTime(audioRef.current!.currentTime));
@@ -58,13 +58,13 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 		}
 	}
 
-	const onLoadedDataAudio = () => {
+	const onLoadedDataAudio = (): void => {
 		setSongProgress(0);
 		setCurrentTime(fmtTime(audioRef.current!.currentTime));
 		setDuration(fmtTime(audioRef.current!.duration));
 	}
 
-	const playControllerAudio = () => {
+	const playControllerAudio = (): void => {
 		if (
 			playerState === PLAYER_STATE.STOP ||
 			playerState === PLAYER_STATE.PAUSE
@@ -85,14 +85,14 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 				</div>
 				<audio autoPlay={false}
 					onTimeUpdate={onTimeUpdateAudio}
-					onLoadedData={onLoadedDataAudio} ref={audioRef} src="/audio_test.mp3" preload="metadata" />
+					onLoadedData={onLoadedDataAudio} ref={audioRef} src="/wonder_pop.mp3" preload="metadata" />
 				<p
-					className="mx-4"
+					className="w-16 mx-4 text-center"
 					onClick={playControllerAudio}
 				>
 					{playerState == PLAYER_STATE.PAUSE || playerState == PLAYER_STATE.STOP
-						? "pl"
-						: "ps"}
+						? "play"
+						: "pause"}
 				</p>
 				<div className="relative hover:cursor-pointer">
 					<Image alt="next song" src="/images/next.svg" width={40} height={40} />

@@ -1,5 +1,5 @@
 # MURE
 Soundcloud clone with nextjs
 
-![Project preview](./ss.png)
+![Project preview](./preview.png)
 

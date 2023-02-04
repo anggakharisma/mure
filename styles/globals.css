@@ -4,30 +4,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 @keyframes spin {
-	from {
-		transform: rotate(0);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spin {
-	animation-name: spin;
-	animation-duration: 7s;
-	animation-direction: linear;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+  animation-name: spin;
+  animation-duration: 7s;
+  animation-direction: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .title-shadow {
-	text-shadow: 12px 12px #ffe9f3;
+  text-shadow: 12px 12px #ffe9f3;
 }

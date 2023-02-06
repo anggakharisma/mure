@@ -26,7 +26,7 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 			if (e.code == "Space") {
 				setTimeout(() => {
 					playControllerAudio();
-				}, 150);
+				}, 125);
 			}
 		})
 		audioRef.current!.volume = Number(volume)

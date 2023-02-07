@@ -98,6 +98,7 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 						? "play"
 						: "pause"}
 				</p>
+				{/*TODO: previous/next function*/}
 				<div className="relative hover:cursor-pointer">
 					<Image alt="next song" src="/images/next.svg" width={40} height={40} />
 				</div>

@@ -8,7 +8,7 @@ import { PLAYER_STATE } from "../../enum";
 
 export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 
-	const [songProgress, setSongProgress] = useState<any>(0);
+	const [songProgress, setSongProgress] = useState<number>(0);
 	const [currentTime, setCurrentTime] = useState<string>("00:00");
 	const [duration, setDuration] = useState<string>("00:00");
 	const [mouseDownSlider, setMouseDownSlider] = useState<boolean>(false);
@@ -83,9 +83,13 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 				<div className="relative hover:cursor-pointer">
 					<Image alt="previous song" src="/images/prev.svg" width={40} height={40} />
 				</div>
-				<audio autoPlay={false}
+				<audio
+					autoPlay={false}
 					onTimeUpdate={onTimeUpdateAudio}
-					onLoadedData={onLoadedDataAudio} ref={audioRef} src="/wonder_pop.mp3" preload="metadata" />
+					onLoadedData={onLoadedDataAudio}
+					ref={audioRef}
+					src="/wonder_pop.mp3"
+					preload="metadata" />
 				<p
 					className="w-16 mx-4 text-center"
 					onClick={playControllerAudio}
@@ -101,7 +105,7 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 			<div className="flex items-center justify-center w-3/4 m-auto">
 				<p className="w-1/5">{currentTime} / {duration}</p>
 				<input className="w-3/4 m-auto mr-4" type="range" value={songProgress} min="0" max="100" step="0.5" onChange={(e) => {
-					setSongProgress(e.target.value);
+					setSongProgress(Number(e.target.value));
 				}}
 					onMouseDown={() => { setMouseDownSlider(true) }}
 					onMouseUp={() => { setMouseDownSlider(false) }}
@@ -123,7 +127,6 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 					}}
 				/>
 			</div>
-
 		</div>
 	);
 };

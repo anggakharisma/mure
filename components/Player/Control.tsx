@@ -3,6 +3,7 @@ import ControlStyle from "../../styles/Control.module.css";
 import Image from "next/image";
 import { PLAYER_STATE } from "../../enum";
 import { AudioPlayerContext } from "../../context/audioPlayerContext";
+import { PauseIcon, PlayIcon } from "@heroicons/react/24/outline";
 
 // Reference
 // https://stackoverflow.com/questions/49814828/javascript-html5-audio-custom-players-seekbar-and-current-time
@@ -86,13 +87,13 @@ export const Control = () => {
 
   return (
     <div className={ControlStyle.ControlContainer}>
-      <div className="flex items-center justify-center">
-        <div className="relative hover:cursor-pointer">
+      <div className="flex items-center justify-center align-middle">
+        <div className="relative w-10 h-10 hover:cursor-pointer">
           <Image
             alt="previous song"
             src="/images/prev.svg"
-            width={40}
-            height={40}
+            layout="fill"
+            objectFit="contain"
           />
         </div>
         <audio
@@ -103,18 +104,23 @@ export const Control = () => {
           src={currentSongSource}
           preload="metadata"
         />
-        <p className="w-16 mx-4 text-center" onClick={audioPlayController}>
-          {playerState == PLAYER_STATE.PAUSE || playerState == PLAYER_STATE.STOP
-            ? "play"
-            : "pause"}
-        </p>
-        {/*TODO: previous/next function*/}
-        <div className="relative hover:cursor-pointer">
+        <div
+          className="w-16 mx-4 text-center hover:cursor-pointer"
+          onClick={audioPlayController}
+        >
+          {playerState == PLAYER_STATE.PAUSE ||
+          playerState == PLAYER_STATE.STOP ? (
+            <PlayIcon className="w-1/2 m-auto text-gray-400" />
+          ) : (
+            <PauseIcon className="w-1/2 m-auto text-gray-400" />
+          )}
+        </div>
+        <div className="relative w-10 h-10 hover:cursor-pointer">
           <Image
-            alt="next song"
+            alt="previous song"
             src="/images/next.svg"
-            width={40}
-            height={40}
+            layout="fill"
+            objectFit="contain"
           />
         </div>
       </div>

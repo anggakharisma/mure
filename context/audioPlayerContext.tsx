@@ -1,11 +1,10 @@
 // Ref: https://blog.logrocket.com/how-to-use-react-context-typescript/#create-context
-import { createContext, RefObject, useEffect, useRef, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import { PLAYER_STATE } from "../enum";
 
 export const AudioPlayerContext = createContext<AudioContextType | null>(null);
 
 const AudioProvider = ({ children }: { children: any }) => {
-  const [currentSongSource, setCurrentSongSource] = useState<string>("");
   const [currentSongInfo, setCurrentSongInfo] = useState<ArtistInfo | null>(
     null
   );
@@ -14,15 +13,19 @@ const AudioProvider = ({ children }: { children: any }) => {
   );
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const changeSource = (src: string) => {
-    setCurrentSongSource(src);
-    audioRef!.current!.src = src;
+  const changeSource = async (info: ArtistInfo) => {
+    await audioRef!.current!.pause();
+    audioRef!.current!.src = info.source.toString();
+    await audioRef!.current!.load();
     audioRef!.current!.play();
     setPlayerState(PLAYER_STATE.PLAY);
   };
 
   const audioPlayController = (): void => {
-    if ((currentSongSource == "" && !currentSongSource) || audioRef == null)
+    if (
+      (currentSongInfo?.source == "" && !currentSongInfo.source) ||
+      audioRef == null
+    )
       return;
     if (
       playerState === PLAYER_STATE.STOP ||
@@ -44,9 +47,8 @@ const AudioProvider = ({ children }: { children: any }) => {
         setCurrentSongInfo,
         playerState,
         setPlayerState,
-        changeSource,
-        currentSongSource,
-        audioRef
+        audioRef,
+        changeSource
       }}
     >
       {children}

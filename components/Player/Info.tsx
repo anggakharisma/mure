@@ -1,21 +1,38 @@
 import InfoStyle from "../../styles/Info.module.css";
 import Image from "next/image";
+import { useContext } from "react";
+import { AudioPlayerContext } from "../../context/audioPlayerContext";
 
 export const Info = () => {
+  const { currentSongInfo, setCurrentSongInfo,  changeSource } = useContext(
+    AudioPlayerContext
+  ) as AudioContextType;
   return (
-    <div className="flex">
-      <div className="relative mr-8 rounded-full">
-        <Image
-          className="rounded-full"
-          src="/images/hero__image.jpg"
-          alt="this is some alt"
-          width={70}
-          height={70}
-        />
+    <div className="flex justify-center items-center align-middle">
+      <div className="relative mr-8 w-24 h-24">
+        {currentSongInfo?.image ? (
+          <Image
+            className="rounded-full"
+            src={currentSongInfo?.image || "/images/placeholder.png"}
+            alt="song artwork"
+						layout="fill"
+						objectFit="cover"
+            
+          />
+        ) : (
+          <h1
+            className="w-20 h-20 rounded-full bg-sub-black
+					"
+          ></h1>
+        )}
       </div>
-      <div className="my-auto">
-        <h2 className={InfoStyle.SongTitle}>WONDER POP</h2>
-        <h3 className="font-light text-gray-500">Moe Shop</h3>
+      <div className="my-auto w-40">
+        <h2 className={InfoStyle.SongTitle}>
+          {currentSongInfo?.title || "No Song"}
+        </h2>
+        <h3 className="font-light text-gray-500">
+          {currentSongInfo?.artistName || "No Artist"}
+        </h3>
       </div>
     </div>
   );

@@ -10,11 +10,10 @@ import { PauseIcon, PlayIcon } from "@heroicons/react/24/outline";
 
 export const Control = () => {
   const {
-    currentSongSource,
-    changeSource,
     audioRef,
     playerState,
     setPlayerState,
+		currentSongInfo,
     audioPlayController
   } = useContext(AudioPlayerContext) as AudioContextType;
   const [songProgress, setSongProgress] = useState<number>(0);
@@ -55,7 +54,6 @@ export const Control = () => {
     songProgress,
     volume,
     audioRef,
-    changeSource
   ]);
 
   const fmtTime = (second: number): string => {
@@ -101,8 +99,7 @@ export const Control = () => {
           onTimeUpdate={onTimeUpdateAudio}
           onLoadedData={onLoadedDataAudio}
           ref={audioRef}
-          src={currentSongSource}
-          preload="metadata"
+          src={currentSongInfo?.source}
         />
         <div
           className="w-16 mx-4 text-center hover:cursor-pointer"
@@ -124,7 +121,7 @@ export const Control = () => {
           />
         </div>
       </div>
-      <div className="flex items-center justify-center w-3/4 m-auto">
+      <div className="flex items-center justify-around w-full lg:w-5/6 m-auto">
         <p className="w-1/5">
           {currentTime} / {duration}
         </p>
@@ -134,7 +131,7 @@ export const Control = () => {
           value={songProgress}
           min="0"
           max="100"
-          disabled={currentSongSource == ""}
+          disabled={currentSongInfo?.source == ""}
           step="0.5"
           onChange={(e) => {
             setSongProgress(Number(e.target.value));
@@ -148,7 +145,7 @@ export const Control = () => {
         />
         <input
           ref={volumeSliderRef}
-          className="w-20 h-full m-auto mr-4 volume_slider"
+          className="w-20 h-full m-auto volume_slider"
           type="range"
           value={volume}
           min="0"

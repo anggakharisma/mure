@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { useContext, useId } from "react";
+import { featuredSongs, newSongs } from "../../data";
 import SongCard from "../SongCard/SongCard";
 
 const Charts = () => {
@@ -20,56 +21,14 @@ const Charts = () => {
         </div>
         <div className="flex w-full">
           <div className="justify-between w-full mx-32 my-4 font-medium text-white flex-column">
-            <SongCard
-              artistInfo={{
-                artistName: "Moe Shop",
-                title: "You Look So Good",
-                image: "/images/hero__image.jpg",
-                year: "2024"
-              }}
-            />
-            <SongCard
-              artistInfo={{
-                artistName: "Moe Shop",
-                title: "You Look So Good",
-                image: "/images/hero__image.jpg",
-                year: "2024"
-              }}
-            />
-            <SongCard
-              artistInfo={{
-                artistName: "Moe Shop",
-                title: "You Look So Good",
-                image: "/images/hero__image.jpg",
-                year: "2024"
-              }}
-            />
+            {featuredSongs.map((info: ArtistInfo, index: number) => {
+              return <SongCard artistInfo={info} key={index} />;
+            })}
           </div>
           <div className="justify-between w-full mx-32 my-4 font-medium text-white flex-column">
-            <SongCard
-              artistInfo={{
-                artistName: "Moe Shop",
-                title: "You Look So Good",
-                image: "/images/hero__image.jpg",
-                year: "2024"
-              }}
-            />
-            <SongCard
-              artistInfo={{
-                artistName: "Moe Shop",
-                title: "You Look So Good",
-                image: "/images/hero__image.jpg",
-                year: "2024"
-              }}
-            />
-            <SongCard
-              artistInfo={{
-                artistName: "Moe Shop",
-                title: "You Look So Good",
-                image: "/images/hero__image.jpg",
-                year: "2024"
-              }}
-            />
+            {newSongs.map((info: ArtistInfo, index: number) => {
+              return <SongCard artistInfo={info} key={index} />;
+            })}
           </div>
         </div>
       </div>

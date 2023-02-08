@@ -12,11 +12,10 @@ interface ArtistInfo {
   title: string;
   image: string;
   year: string;
+  source: string;
 }
 
 interface AudioContextType {
-  currentSongSource: string;
-  changeSource: (src: string) => void;
   audioPlayController: () => void;
   playerState: PLAYER_STATE;
   setPlayerState: Dispatch<SetStateAction<PLAYER_STATE>>;
@@ -24,4 +23,5 @@ interface AudioContextType {
   setCurrentSongInfo: Dispatch<SetStateAction<ArtistInfo>>;
   setPlayerState: Dispatch<SetStateAction<PLAYER_STATE>>;
   audioRef: RefObject<HTMLAudioElement>;
+  changeSource: (info: ArtistInfo) => void;
 }

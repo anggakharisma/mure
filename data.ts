@@ -1,16 +1,32 @@
 export const newSongs: ArtistInfo[] = [
   {
     artistName: "Moe Shop",
-    title: "You Look So Good",
-    image: "/images/hero__image.jpg",
-    year: "2024"
+    title: "Wonder Pop",
+    image: "/images/wonder_pop.jpg",
+    year: "2024",
+    source: "/songs/wonder_pop.mp3"
+  },
+  {
+    artistName: "Mameyudoufu",
+    title: "Wave",
+    image: "/images/wave.jpg",
+    year: "2024",
+    source: "/songs/wave.mp3"
   }
 ];
 export const featuredSongs: ArtistInfo[] = [
   {
-    artistName: "Moe Shop",
-    title: "You Look So Good",
-    image: "/images/hero__image.jpg",
-    year: "2024"
+    artistName: "Mameyudoufu",
+    title: "Wave",
+    image: "/images/wave.jpg",
+    year: "2024",
+    source: "/songs/wave.mp3"
+  },
+	{
+    artistName: "Snail's House",
+    title: "Pixel Galaxy",
+    image: "/images/pixel_galaxy.webp",
+    year: "2024",
+    source: "/songs/pixel_galaxy.mp3"
   }
 ];

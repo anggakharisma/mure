@@ -20,8 +20,8 @@ interface AudioContextType {
   audioPlayController: () => void;
   playerState: PLAYER_STATE;
   setPlayerState: Dispatch<SetStateAction<PLAYER_STATE>>;
-  currentArtistInfo: ArtistInfo | null;
-  setCurrentArtistInfo: Dispatch<SetStateAction<ArtistInfo>>;
+  currentSongInfo: ArtistInfo | null;
+  setCurrentSongInfo: Dispatch<SetStateAction<ArtistInfo>>;
   setPlayerState: Dispatch<SetStateAction<PLAYER_STATE>>;
   audioRef: RefObject<HTMLAudioElement>;
 }

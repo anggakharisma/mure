@@ -6,7 +6,7 @@ export const AudioPlayerContext = createContext<AudioContextType | null>(null);
 
 const AudioProvider = ({ children }: { children: any }) => {
   const [currentSongSource, setCurrentSongSource] = useState<string>("");
-  const [currentArtistInfo, setCurrentArtistInfo] = useState<ArtistInfo | null>(
+  const [currentSongInfo, setCurrentSongInfo] = useState<ArtistInfo | null>(
     null
   );
   const [playerState, setPlayerState] = useState<PLAYER_STATE>(
@@ -40,8 +40,8 @@ const AudioProvider = ({ children }: { children: any }) => {
     <AudioPlayerContext.Provider
       value={{
         audioPlayController,
-				currentArtistInfo,
-				setCurrentArtistInfo,
+        currentSongInfo,
+        setCurrentSongInfo,
         playerState,
         setPlayerState,
         changeSource,

@@ -11,7 +11,7 @@ export const Control = () => {
   const {
     currentSongSource,
     changeSource,
-		audioRef,
+    audioRef,
     playerState,
     setPlayerState,
     audioPlayController
@@ -41,13 +41,21 @@ export const Control = () => {
     });
     if (mouseDownSlider) {
       const pct = Number(songProgress) / 100;
-      audioRef.current!.currentTime =
-        (audioRef!.current!.duration || 0) * pct;
+      audioRef.current!.currentTime = (audioRef!.current!.duration || 0) * pct;
       setCurrentTime(fmtTime(audioRef.current!.currentTime));
       setDuration(fmtTime(audioRef.current!.duration));
     }
     audioRef.current!.volume = Number(volume);
-  }, [audioPlayController, mouseDownSlider, playerState, setPlayerState, songProgress, volume, audioRef, changeSource]);
+  }, [
+    audioPlayController,
+    mouseDownSlider,
+    playerState,
+    setPlayerState,
+    songProgress,
+    volume,
+    audioRef,
+    changeSource
+  ]);
 
   const fmtTime = (second: number): string => {
     const d = new Date(0);
@@ -62,7 +70,9 @@ export const Control = () => {
 
   const onTimeUpdateAudio = (): void => {
     if (!mouseDownSlider) {
-      setSongProgress((audioRef.current!.currentTime / audioRef.current!.duration) * 100);
+      setSongProgress(
+        (audioRef.current!.currentTime / audioRef.current!.duration) * 100
+      );
       setCurrentTime(fmtTime(audioRef.current!.currentTime));
       setDuration(fmtTime(audioRef.current!.duration));
     }
@@ -93,10 +103,7 @@ export const Control = () => {
           src={currentSongSource}
           preload="metadata"
         />
-        <p
-          className="w-16 mx-4 text-center"
-          onClick={audioPlayController}
-        >
+        <p className="w-16 mx-4 text-center" onClick={audioPlayController}>
           {playerState == PLAYER_STATE.PAUSE || playerState == PLAYER_STATE.STOP
             ? "play"
             : "pause"}

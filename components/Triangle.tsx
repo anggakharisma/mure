@@ -2,7 +2,7 @@ const Triangle = ({
   color,
   width,
   position,
-  strokeWidth,
+  strokeWidth
 }: {
   color: string;
   width: number;

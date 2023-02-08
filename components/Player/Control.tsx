@@ -1,12 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import ControlStyle from "../../styles/Control.module.css";
 import Image from "next/image";
 import { PLAYER_STATE } from "../../enum";
+import { SongContext, SongContextType } from "../../context/songContext";
 
 // Reference
 // https://stackoverflow.com/questions/49814828/javascript-html5-audio-custom-players-seekbar-and-current-time
 
 export const Control = ({ playerState, setPlayerState }: ControlProps) => {
+  const { currentSongSource } = useContext(SongContext) as SongContextType;
   const [songProgress, setSongProgress] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<string>("00:00");
   const [duration, setDuration] = useState<string>("00:00");
@@ -68,15 +70,16 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 
   const playControllerAudio = (): void => {
     if (
-      playerState === PLAYER_STATE.STOP ||
-      playerState === PLAYER_STATE.PAUSE
+      (playerState === PLAYER_STATE.STOP ||
+        playerState === PLAYER_STATE.PAUSE) &&
+      currentSongSource !== ""
     ) {
       audioRef.current!.play();
       setPlayerState(PLAYER_STATE.PLAY);
-    } else {
-      audioRef.current!.pause();
-      setPlayerState(PLAYER_STATE.PAUSE);
+      return;
     }
+    audioRef.current!.pause();
+    setPlayerState(PLAYER_STATE.PAUSE);
   };
 
   return (
@@ -95,7 +98,7 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
           onTimeUpdate={onTimeUpdateAudio}
           onLoadedData={onLoadedDataAudio}
           ref={audioRef}
-          src="/wonder_pop.mp3"
+          src={currentSongSource}
           preload="metadata"
         />
         <p className="w-16 mx-4 text-center" onClick={playControllerAudio}>
@@ -123,6 +126,7 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
           value={songProgress}
           min="0"
           max="100"
+          disabled={currentSongSource == ""}
           step="0.5"
           onChange={(e) => {
             setSongProgress(Number(e.target.value));

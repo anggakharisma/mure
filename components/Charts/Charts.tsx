@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import SongCard from "../SongCard/SongCard";
 
 const Charts = () => {

@@ -4,7 +4,7 @@
   background-color: grey;
   z-index: -30;
   left: -55%;
-  position: absolute;
+  position: fixed;
   transform: rotate(60deg);
   background-image: linear-gradient(#c0ffe8, #f4c9ff);
 }

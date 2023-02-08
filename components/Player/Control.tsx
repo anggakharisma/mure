@@ -2,20 +2,27 @@ import { useContext, useEffect, useRef, useState } from "react";
 import ControlStyle from "../../styles/Control.module.css";
 import Image from "next/image";
 import { PLAYER_STATE } from "../../enum";
-import { SongContext, SongContextType } from "../../context/songContext";
+import { AudioPlayerContext } from "../../context/audioPlayerContext";
 
 // Reference
 // https://stackoverflow.com/questions/49814828/javascript-html5-audio-custom-players-seekbar-and-current-time
 
-export const Control = ({ playerState, setPlayerState }: ControlProps) => {
-  const { currentSongSource } = useContext(SongContext) as SongContextType;
+export const Control = () => {
+  const {
+    currentSongSource,
+    changeSource,
+		audioRef,
+    playerState,
+    setPlayerState,
+    audioPlayController
+  } = useContext(AudioPlayerContext) as AudioContextType;
   const [songProgress, setSongProgress] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<string>("00:00");
   const [duration, setDuration] = useState<string>("00:00");
   const [mouseDownSlider, setMouseDownSlider] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(0.2);
 
-  const audioRef = useRef<HTMLAudioElement>(null);
+  //const audioRef = useRef<HTMLAudioElement>(null);
   const volumeSliderRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -28,18 +35,19 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
     document.addEventListener("keyup", (e) => {
       if (e.code == "Space") {
         setTimeout(() => {
-          playControllerAudio();
+          audioPlayController();
         }, 100);
       }
     });
-    audioRef.current!.volume = Number(volume);
     if (mouseDownSlider) {
       const pct = Number(songProgress) / 100;
-      audioRef.current!.currentTime = (audioRef.current!.duration || 0) * pct;
+      audioRef.current!.currentTime =
+        (audioRef!.current!.duration || 0) * pct;
       setCurrentTime(fmtTime(audioRef.current!.currentTime));
       setDuration(fmtTime(audioRef.current!.duration));
     }
-  }, [mouseDownSlider, playerState, setPlayerState, songProgress, volume]);
+    audioRef.current!.volume = Number(volume);
+  }, [audioPlayController, mouseDownSlider, playerState, setPlayerState, songProgress, volume, audioRef, changeSource]);
 
   const fmtTime = (second: number): string => {
     const d = new Date(0);
@@ -54,9 +62,7 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
 
   const onTimeUpdateAudio = (): void => {
     if (!mouseDownSlider) {
-      setSongProgress(
-        (audioRef.current!.currentTime / audioRef.current!.duration) * 100
-      );
+      setSongProgress((audioRef.current!.currentTime / audioRef.current!.duration) * 100);
       setCurrentTime(fmtTime(audioRef.current!.currentTime));
       setDuration(fmtTime(audioRef.current!.duration));
     }
@@ -66,20 +72,6 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
     setSongProgress(0);
     setCurrentTime(fmtTime(audioRef.current!.currentTime));
     setDuration(fmtTime(audioRef.current!.duration));
-  };
-
-  const playControllerAudio = (): void => {
-    if (
-      (playerState === PLAYER_STATE.STOP ||
-        playerState === PLAYER_STATE.PAUSE) &&
-      currentSongSource !== ""
-    ) {
-      audioRef.current!.play();
-      setPlayerState(PLAYER_STATE.PLAY);
-      return;
-    }
-    audioRef.current!.pause();
-    setPlayerState(PLAYER_STATE.PAUSE);
   };
 
   return (
@@ -101,7 +93,10 @@ export const Control = ({ playerState, setPlayerState }: ControlProps) => {
           src={currentSongSource}
           preload="metadata"
         />
-        <p className="w-16 mx-4 text-center" onClick={playControllerAudio}>
+        <p
+          className="w-16 mx-4 text-center"
+          onClick={audioPlayController}
+        >
           {playerState == PLAYER_STATE.PAUSE || playerState == PLAYER_STATE.STOP
             ? "play"
             : "pause"}

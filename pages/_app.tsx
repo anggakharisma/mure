@@ -6,14 +6,14 @@ import { Player } from "../components/Player/Player";
 import HomeStyle from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import SongProvider from "../context/songContext";
+import AudioProvider from "../context/audioPlayerContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   if (router.pathname === "/_error") return <Component {...pageProps} />;
 
   return (
-    <SongProvider>
+    <AudioProvider>
       <Head>
         <title>MURE</title>
       </Head>
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
       </Link>
       <Player />
-    </SongProvider>
+    </AudioProvider>
   );
 }
 

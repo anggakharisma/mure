@@ -15,17 +15,17 @@ const Charts = () => {
               FEATURED SONGS
             </h2>
           </div>
-          <div>
+          <div className="hidden lg:block">
             <h2 className="text-3xl tracking-widest text-center">NEW SONGS</h2>
           </div>
         </div>
         <div className="flex w-full">
-          <div className="justify-between w-full mx-32 my-4 font-medium text-white flex-column">
+          <div className="justify-between w-full mx-32 my-4 font-medium text-white">
             {featuredSongs.map((info: ArtistInfo, index: number) => {
               return <SongCard artistInfo={info} key={index} />;
             })}
           </div>
-          <div className="justify-between w-full mx-32 my-4 font-medium text-white flex-column">
+          <div className="justify-between hidden w-full mx-32 my-4 font-medium text-white lg:block">
             {newSongs.map((info: ArtistInfo, index: number) => {
               return <SongCard artistInfo={info} key={index} />;
             })}

@@ -14,6 +14,8 @@ const AudioProvider = ({ children }: { children: any }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const changeSource = async (info: ArtistInfo) => {
+    if (currentSongInfo?.artistName == info.artistName) return;
+
     await audioRef!.current!.pause();
     audioRef!.current!.src = info.source.toString();
     await audioRef!.current!.load();

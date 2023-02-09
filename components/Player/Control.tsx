@@ -102,7 +102,7 @@ export const Control = () => {
           src={currentSongInfo?.source}
         />
         <div
-          className="w-16 mx-4 text-center hover:cursor-pointer"
+          className="w-16 mx-4 text-center select-none hover:cursor-pointer"
           onClick={audioPlayController}
         >
           {playerState == PLAYER_STATE.PAUSE ||

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AudioPlayerContext } from "../../context/audioPlayerContext";
 
 export const Info = () => {
-  const { currentSongInfo, setCurrentSongInfo,  changeSource } = useContext(
+  const { currentSongInfo, setCurrentSongInfo, changeSource } = useContext(
     AudioPlayerContext
   ) as AudioContextType;
   return (
@@ -15,9 +15,8 @@ export const Info = () => {
             className="rounded-full"
             src={currentSongInfo?.image || "/images/placeholder.png"}
             alt="song artwork"
-						layout="fill"
-						objectFit="cover"
-            
+            layout="fill"
+            objectFit="cover"
           />
         ) : (
           <h1

@@ -22,7 +22,7 @@ export const featuredSongs: ArtistInfo[] = [
     year: "2024",
     source: "/songs/wave.mp3"
   },
-	{
+  {
     artistName: "Snail's House",
     title: "Pixel Galaxy",
     image: "/images/pixel_galaxy.webp",

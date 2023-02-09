@@ -13,7 +13,7 @@ export const Control = () => {
     audioRef,
     playerState,
     setPlayerState,
-		currentSongInfo,
+    currentSongInfo,
     audioPlayController
   } = useContext(AudioPlayerContext) as AudioContextType;
   const [songProgress, setSongProgress] = useState<number>(0);
@@ -53,7 +53,7 @@ export const Control = () => {
     setPlayerState,
     songProgress,
     volume,
-    audioRef,
+    audioRef
   ]);
 
   const fmtTime = (second: number): string => {

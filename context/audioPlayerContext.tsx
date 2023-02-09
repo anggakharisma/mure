@@ -22,11 +22,9 @@ const AudioProvider = ({ children }: { children: any }) => {
   };
 
   const audioPlayController = (): void => {
-    if (
-      (currentSongInfo?.source == "" && !currentSongInfo.source) ||
-      audioRef == null
-    )
-      return;
+    console.log(currentSongInfo);
+    if (currentSongInfo == null) return;
+
     if (
       playerState === PLAYER_STATE.STOP ||
       playerState === PLAYER_STATE.PAUSE

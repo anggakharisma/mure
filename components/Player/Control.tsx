@@ -121,7 +121,7 @@ export const Control = () => {
           />
         </div>
       </div>
-      <div className="flex items-center justify-around w-full lg:w-5/6 m-auto">
+      <div className="flex items-center justify-around w-full m-auto lg:w-5/6">
         <p className="w-1/5">
           {currentTime} / {duration}
         </p>
@@ -131,7 +131,7 @@ export const Control = () => {
           value={songProgress}
           min="0"
           max="100"
-          disabled={currentSongInfo?.source == ""}
+          disabled={currentSongInfo?.source == null}
           step="0.5"
           onChange={(e) => {
             setSongProgress(Number(e.target.value));

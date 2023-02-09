@@ -21,8 +21,6 @@ const AudioProvider = ({ children }: { children: any }) => {
     setPlayerState(PLAYER_STATE.PLAY);
   };
 
-
-
   const audioPlayController = (): void => {
     console.log(currentSongInfo);
     if (currentSongInfo == null) return;

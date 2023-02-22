@@ -35,7 +35,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="z-30 m-auto">
+      <div className="z-30 m-auto hidden lg:block">
         <h1 className="z-30 w-2/4 font-bold leading-snug tracking-widest text-8xl ml-28 text-primary title-shadow">
           SHARE LISTEN DISCOVER
         </h1>

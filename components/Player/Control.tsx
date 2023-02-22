@@ -22,16 +22,17 @@ export const Control = () => {
   const [mouseDownSlider, setMouseDownSlider] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(0.2);
 
-  //const audioRef = useRef<HTMLAudioElement>(null);
   const volumeSliderRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     volumeSliderRef.current!.addEventListener("wheel", (e) =>
       e.preventDefault()
     );
-    window.addEventListener("keydown", function (e) {
+
+    window.addEventListener("keydown", function(e) {
       if (e.code == "Space") e.preventDefault();
     });
+
     document.addEventListener("keyup", (e) => {
       if (e.code == "Space") {
         setTimeout(() => {
@@ -69,9 +70,6 @@ export const Control = () => {
 
   const onTimeUpdateAudio = (): void => {
     if (!mouseDownSlider) {
-      setSongProgress(
-        (audioRef.current!.currentTime / audioRef.current!.duration) * 100
-      );
       setCurrentTime(fmtTime(audioRef.current!.currentTime));
       setDuration(fmtTime(audioRef.current!.duration));
     }
@@ -106,7 +104,7 @@ export const Control = () => {
           onClick={audioPlayController}
         >
           {playerState == PLAYER_STATE.PAUSE ||
-          playerState == PLAYER_STATE.STOP ? (
+            playerState == PLAYER_STATE.STOP ? (
             <PlayIcon className="w-1/2 m-auto text-gray-400" />
           ) : (
             <PauseIcon className="w-1/2 m-auto text-gray-400" />
@@ -135,6 +133,12 @@ export const Control = () => {
           step="0.5"
           onChange={(e) => {
             setSongProgress(Number(e.target.value));
+          }}
+          onTouchStart={() => {
+            setMouseDownSlider(true);
+          }}
+          onTouchMove={() => {
+            setMouseDownSlider(true);
           }}
           onMouseDown={() => {
             setMouseDownSlider(true);

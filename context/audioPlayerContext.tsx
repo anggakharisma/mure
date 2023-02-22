@@ -24,7 +24,6 @@ const AudioProvider = ({ children }: { children: any }) => {
   };
 
   const audioPlayController = (): void => {
-    console.log(currentSongInfo);
     if (currentSongInfo == null) return;
 
     if (

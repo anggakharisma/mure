@@ -20,8 +20,8 @@ export const Control = () => {
   const [currentTime, setCurrentTime] = useState<string>("00:00");
   const [duration, setDuration] = useState<string>("00:00");
   const [mouseDownSlider, setMouseDownSlider] = useState<boolean>(false);
-  const [volume, setVolume] = useState<number>(0.2);
 
+  const [volume, setVolume] = useState<number>(0.2);
   const volumeSliderRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -40,13 +40,15 @@ export const Control = () => {
         }, 100);
       }
     });
+
+    audioRef.current!.volume = Number(volume);
+
     if (mouseDownSlider) {
       const pct = Number(songProgress) / 100;
       audioRef.current!.currentTime = (audioRef!.current!.duration || 0) * pct;
       setCurrentTime(fmtTime(audioRef.current!.currentTime));
       setDuration(fmtTime(audioRef.current!.duration));
     }
-    audioRef.current!.volume = Number(volume);
   }, [
     audioPlayController,
     mouseDownSlider,
@@ -158,22 +160,22 @@ export const Control = () => {
           onChange={(e) => {
             setVolume(Number(e.target.value));
           }}
-          onWheel={(e) => {
-            const multiplier = 0.05;
-            if (e.deltaY <= 1) {
-              if (volume + multiplier > 1) {
-                setVolume(1);
-                return;
-              }
-              setVolume(volume + multiplier);
-            } else {
-              if (volume - multiplier < 0) {
-                setVolume(0);
-                return;
-              }
-              setVolume(volume - multiplier);
-            }
-          }}
+        /* onWheel={(e) => {
+         const multiplier = 0.05;
+         if (e.deltaY <= 1) {
+           if (volume + multiplier > 1) {
+             setVolume(1);
+             return;
+           }
+           setVolume(volume + multiplier);
+         } else {
+           if (volume - multiplier < 0) {
+             setVolume(0);
+             return;
+           }
+           setVolume(volume - multiplier);
+         }
+       }}*/
         />
       </div>
     </div>

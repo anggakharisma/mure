@@ -31,3 +31,9 @@ body {
 .title-shadow {
   text-shadow: 12px 12px #ffe9f3;
 }
+
+@media(max-width: 768px) {
+  .title-shadow {
+    text-shadow: none;
+  }
+}

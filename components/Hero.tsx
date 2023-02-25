@@ -27,6 +27,7 @@ const Hero = () => {
       />
 
       <div className={HeroStyles.hero_image_container}>
+        <div className="absolute opacity-80 lg:opacity-0 z-10 bg-dark-primary w-full h-full lg:relative block lg:none"></div>
         <Image
           src="/images/hero__image.jpg"
           alt="hero image left"
@@ -35,8 +36,8 @@ const Hero = () => {
         />
       </div>
 
-      <div className="z-30 m-auto absolute  lg:block lg:relative">
-        <h1 className="z-30 w-2/4 font-bold leading-snug tracking-widest text-8xl ml-28 text-primary title-shadow">
+      <div className="z-30 m-auto absolute lg:block lg:relative">
+        <h1 style={{ lineHeight: "1.5em" }} className="z-30 w-2/4 lg:w-2/4 font-bold leading-snug tracking-widest text-7xl lg:text-8xl m-auto lg:ml-28 text-primary title-shadow text-center lg:text-left">
           SHARE LISTEN DISCOVER
         </h1>
       </div>

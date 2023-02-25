@@ -1,12 +1,11 @@
-import { useContext, useId } from "react";
 import { featuredSongs, newSongs } from "../../data";
 import SongCard from "../SongCard/SongCard";
 
 const Charts = () => {
   return (
-    <div className="w-full">
+    <div className="w-full lg:mt-3.5 mt-[38rem]">
       <div className="w-10/12 p-4 m-auto mt-16 mb-24" id="charts">
-        <h1 className="inline-block mb-4 text-6xl font-semibold tracking-widest text-primary">
+        <h1 className="text-center lg:text-left mb-16 lg:mb-4 text-6xl font-semibold tracking-[40px] lg:tracking-widest text-primary">
           CHARTS
         </h1>
         <div className="flex justify-around w-full px-16 py-4 font-medium text-white bg-primary">

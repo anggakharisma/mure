@@ -1,20 +1,35 @@
 .hero {
 	height: 63vh;
-	@apply relative flex w-10/12 p-6 m-auto mt-16;
-	width: 70vw;
+  z-index: -20;
+	@apply absolute top-0 lg:relative flex align-middle justify-center items-center w-full lg:w-5/6 p-0 m-0 lg:p-6 lg:m-auto lg:mt-16;
 }
 
 .hero_image_container {
-	@apply relative w-3/4 m-auto;
+	@apply relative w-full h-full m-auto;
 	clip-path: circle(42% at 50% 50%);
-	min-width: 40%;
-	height: 100%;
-	width: 100%;
 	background-color: #ffffc2;
 	border-bottom: 24px solid #ffffc2;
+  width: 60vw;
 }
+
 
 .hero_image_container img {
 	clip-path: circle(42% at 50% 50%);
 	height: 100%;
+}
+
+@media(max-width: 768px) {
+  .hero_image_container img {
+    clip-path: none;
+  }
+
+  .hero_image_container {
+    clip-path: none;
+    border-bottom: none;
+    width: 100vw;
+  }
+
+  .hero {
+    height: 75vh;
+  }
 }

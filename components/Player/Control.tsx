@@ -24,11 +24,9 @@ export const Control = () => {
   const [volume, setVolume] = useState<number>(0.2);
   const volumeSliderRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    volumeSliderRef.current!.addEventListener("wheel", (e) =>
-      e.preventDefault()
-    );
 
+  useEffect(() => {
+    volumeSliderRef.current!.addEventListener("wheel", (e) => e.preventDefault());
     window.addEventListener("keydown", function(e) {
       if (e.code == "Space") e.preventDefault();
     });
@@ -71,14 +69,18 @@ export const Control = () => {
   };
 
   const onTimeUpdateAudio = (): void => {
+    const currentProgress = audioRef.current!.currentTime / audioRef.current!.duration * 100;
     if (!mouseDownSlider) {
+      if (currentProgress) setSongProgress(currentProgress);
+
+      else setSongProgress(0)
+
       setCurrentTime(fmtTime(audioRef.current!.currentTime));
       setDuration(fmtTime(audioRef.current!.duration));
     }
   };
 
   const onLoadedDataAudio = (): void => {
-    setSongProgress(0);
     setCurrentTime(fmtTime(audioRef.current!.currentTime));
     setDuration(fmtTime(audioRef.current!.duration));
   };
@@ -139,8 +141,8 @@ export const Control = () => {
           onTouchStart={() => {
             setMouseDownSlider(true);
           }}
-          onTouchMove={() => {
-            setMouseDownSlider(true);
+          onTouchEnd={() => {
+            setMouseDownSlider(false);
           }}
           onMouseDown={() => {
             setMouseDownSlider(true);
@@ -158,24 +160,25 @@ export const Control = () => {
           max="1"
           step="0.01"
           onChange={(e) => {
+            console.log(e.target.value);
             setVolume(Number(e.target.value));
           }}
-        /* onWheel={(e) => {
-         const multiplier = 0.05;
-         if (e.deltaY <= 1) {
-           if (volume + multiplier > 1) {
-             setVolume(1);
-             return;
-           }
-           setVolume(volume + multiplier);
-         } else {
-           if (volume - multiplier < 0) {
-             setVolume(0);
-             return;
-           }
-           setVolume(volume - multiplier);
-         }
-       }}*/
+          onWheel={(e) => {
+            const multiplier = 0.05;
+            if (e.deltaY <= 1) {
+              if (volume + multiplier > 1) {
+                setVolume(1);
+                return;
+              }
+              setVolume(volume + multiplier);
+            } else {
+              if (volume - multiplier < 0) {
+                setVolume(0);
+                return;
+              }
+              setVolume(volume - multiplier);
+            }
+          }}
         />
       </div>
     </div>

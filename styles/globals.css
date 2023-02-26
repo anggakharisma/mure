@@ -21,6 +21,7 @@ body {
 }
 
 .spin {
+  z-index: 9;
   animation-name: spin;
   animation-duration: 7s;
   animation-direction: linear;

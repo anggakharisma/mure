@@ -27,7 +27,7 @@ const Hero = () => {
       />
 
       <div className={HeroStyles.hero_image_container}>
-        <div className="absolute opacity-80 lg:opacity-0 z-10 bg-dark-primary w-full h-full lg:relative block lg:none"></div>
+        <div className="absolute opacity-70 lg:opacity-0 z-10 bg-dark-primary w-full h-full lg:relative block lg:none"></div>
         <Image
           src="/images/hero__image.jpg"
           alt="hero image left"

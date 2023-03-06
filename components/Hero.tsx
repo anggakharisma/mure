@@ -27,17 +27,17 @@ const Hero = () => {
       />
 
       <div className={HeroStyles.hero_image_container}>
-        <div className="absolute opacity-70 lg:opacity-0 z-10 bg-dark-primary w-full h-full lg:relative block lg:none"></div>
+        <div className="absolute z-10 block w-full h-full opacity-70 lg:opacity-0 bg-dark-primary lg:relative lg:none"></div>
         <Image
           src="/images/hero__image.jpg"
           alt="hero image left"
           layout="fill"
-          objectFit="contain"
+          objectFit="cover"
         />
       </div>
 
-      <div className="z-30 m-auto absolute lg:block lg:relative">
-        <h1 style={{ lineHeight: "1.5em" }} className="z-30 w-2/4 lg:w-2/4 font-bold leading-snug tracking-widest text-7xl lg:text-8xl m-auto lg:ml-28 text-primary title-shadow text-center lg:text-left">
+      <div className="absolute z-30 m-auto lg:block lg:relative">
+        <h1 style={{ lineHeight: "1.5em" }} className="z-30 w-2/4 m-auto text-6xl font-bold leading-snug tracking-widest text-center lg:w-2/4 lg:text-8xl lg:ml-28 text-primary title-shadow lg:text-left">
           SHARE LISTEN DISCOVER
         </h1>
       </div>

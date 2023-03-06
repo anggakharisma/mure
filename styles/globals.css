@@ -38,3 +38,9 @@ body {
     text-shadow: none;
   }
 }
+
+
+input[type="range"]:hover::-webkit-slider-thumb {
+	background-color: yellow;
+	appearance: none;
+}

@@ -38,10 +38,10 @@ export const featuredSongs: ArtistInfo[] = [
     source: "/songs/pixel_galaxy.mp3"
   },
   {
-    artistName: "Mameyudoufu",
-    title: "Wave",
-    image: "/images/wave.jpg",
-    year: "2019",
-    source: "/songs/wave.mp3"
+    artistName: "Moe Shop",
+    title: "Wonder Pop",
+    image: "/images/wonder_pop.jpg",
+    year: "2021",
+    source: "/songs/wonder_pop.mp3"
   }
 ];

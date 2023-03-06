@@ -129,7 +129,7 @@ export const Control = () => {
           {currentTime} / {duration}
         </p>
         <input
-          className="w-3/4 h-2 m-auto mr-4 bg-gray-300"
+          className="w-3/4 h-2 m-auto mr-4 bg-gray-300 song-progress"
           type="range"
           value={songProgress}
           min="0"

@@ -22,10 +22,10 @@ const Charts = () => {
             </div>
             <div className="flex-1">
               <h2 className="p-4 text-3xl font-medium tracking-widest text-center text-white bg-primary">
-                FEATURED SONGS
+                NEW SONGS
               </h2>
               <div className="justify-between w-full my-4 font-medium text-white">
-                {featuredSongs.map((info: ArtistInfo, index: number) => {
+                {newSongs.map((info: ArtistInfo, index: number) => {
                   return <SongCard artistInfo={info} key={index} />;
                 })}
               </div>

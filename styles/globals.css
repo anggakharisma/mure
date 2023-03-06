@@ -25,7 +25,6 @@ body {
 .spin {
 	z-index: 9;
 	animation-name: spin;
-	animation-duration: 7s;
 	animation-direction: linear;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
@@ -37,7 +36,8 @@ body {
 
 @media(max-width: 768px) {
 	.title-shadow {
-		text-shadow: none;
+		text-shadow: 2px 6px #F5A9CB;
+		text-align: center;
 	}
 }
 

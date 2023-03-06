@@ -1,4 +1,3 @@
-import AudioProvider from "../../context/audioPlayerContext";
 import PlayerStyles from "../../styles/Player.module.css";
 import { Control } from "./Control";
 import { Info } from "./Info";
@@ -6,7 +5,7 @@ import { Info } from "./Info";
 export const Player = () => {
   return (
     <div className={PlayerStyles.PlayerContainer}>
-      <div className="flex w-full lg:w-3/4 justify-between align-middle items-center m-auto">
+      <div className="flex items-center justify-between w-full m-auto align-middle lg:w-3/4">
         <Info />
         <Control />
       </div>

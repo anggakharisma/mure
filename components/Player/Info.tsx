@@ -8,8 +8,8 @@ export const Info = () => {
     AudioPlayerContext
   ) as AudioContextType;
   return (
-    <div className="flex justify-center items-center align-middle">
-      <div className="relative mr-8 w-24 h-24">
+    <div className="flex items-center justify-center align-middle">
+      <div className="relative w-20 h-20 mr-8">
         {currentSongInfo?.image ? (
           <Image
             className="rounded-full"
@@ -19,13 +19,10 @@ export const Info = () => {
             objectFit="cover"
           />
         ) : (
-          <h1
-            className="w-20 h-20 rounded-full bg-sub-black
-					"
-          ></h1>
+          <h1 className="w-20 h-20 rounded-full bg-sub-black "></h1>
         )}
       </div>
-      <div className="my-auto w-40">
+      <div className="w-40 my-auto">
         <h2 className={InfoStyle.SongTitle}>
           {currentSongInfo?.title || "No Song"}
         </h2>

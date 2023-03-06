@@ -1,5 +1,5 @@
 # MURE
-Soundcloud clone with nextjs
+Soundcloud-like clone with nextjs
 
 ![Project preview](./preview2.png)
 

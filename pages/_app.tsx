@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className={HomeStyle.GradientBg}></div>
       <Component {...pageProps} />
       <Link href="/">
-        <div className="fixed z-30 p-2 text-white transition-transform bg-gray-700 cursor-pointer hover:scale-110 right-20 bottom-32">
+        <div className="fixed z-30 p-2 text-white transition-transform bg-gray-700 cursor-pointer hover:scale-110 right-12 bottom-40">
           UP
         </div>
       </Link>

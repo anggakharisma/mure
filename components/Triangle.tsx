@@ -2,15 +2,22 @@ const Triangle = ({
   color,
   width,
   position,
-  strokeWidth
+  strokeWidth,
+  duration
 }: {
   color: string;
   width: number;
   position: string;
   strokeWidth: number;
+  duration: number;
 }) => {
   return (
-    <div className={`spin absolute ${position}`}>
+    <div
+      style={{
+        animationDuration: ` ${duration}s`
+      }}
+      className={`z-50 spin absolute ${position}`}
+    >
       <svg
         width={width}
         height="104"

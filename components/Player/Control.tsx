@@ -24,10 +24,11 @@ export const Control = () => {
   const [volume, setVolume] = useState<number>(0.2);
   const volumeSliderRef = useRef<HTMLInputElement>(null);
 
-
   useEffect(() => {
-    volumeSliderRef.current!.addEventListener("wheel", (e) => e.preventDefault());
-    window.addEventListener("keydown", function(e) {
+    volumeSliderRef.current!.addEventListener("wheel", (e) =>
+      e.preventDefault()
+    );
+    window.addEventListener("keydown", function (e) {
       if (e.code == "Space") e.preventDefault();
     });
 
@@ -69,11 +70,11 @@ export const Control = () => {
   };
 
   const onTimeUpdateAudio = (): void => {
-    const currentProgress = audioRef.current!.currentTime / audioRef.current!.duration * 100;
+    const currentProgress =
+      (audioRef.current!.currentTime / audioRef.current!.duration) * 100;
     if (!mouseDownSlider) {
       if (currentProgress) setSongProgress(currentProgress);
-
-      else setSongProgress(0)
+      else setSongProgress(0);
 
       setCurrentTime(fmtTime(audioRef.current!.currentTime));
       setDuration(fmtTime(audioRef.current!.duration));
@@ -108,7 +109,7 @@ export const Control = () => {
           onClick={audioPlayController}
         >
           {playerState == PLAYER_STATE.PAUSE ||
-            playerState == PLAYER_STATE.STOP ? (
+          playerState == PLAYER_STATE.STOP ? (
             <PlayIcon className="w-1/2 m-auto text-gray-400" />
           ) : (
             <PauseIcon className="w-1/2 m-auto text-gray-400" />
@@ -128,7 +129,7 @@ export const Control = () => {
           {currentTime} / {duration}
         </p>
         <input
-          className="w-3/4 m-auto mr-4"
+          className="w-3/4 h-2 m-auto mr-4 bg-gray-300 song-progress"
           type="range"
           value={songProgress}
           min="0"

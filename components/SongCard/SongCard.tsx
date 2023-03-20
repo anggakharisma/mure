@@ -8,7 +8,7 @@ const SongCard = ({ artistInfo }: SongCardProps) => {
     AudioPlayerContext
   ) as AudioContextType;
   return (
-    <div className="relative flex items-center justify-center w-full my-24 group">
+    <div className="relative flex items-center justify-center w-full p-4 my-24 group">
       <div
         className="relative mr-12 w-60 h-60"
         onClick={() => {

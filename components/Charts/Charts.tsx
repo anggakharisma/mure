@@ -3,7 +3,7 @@ import SongCard from "../SongCard/SongCard";
 
 const Charts = () => {
   return (
-    <div className="w-full lg:mt-3.5 mt-[40rem]">
+    <div className="w-5/6 m-auto lg:mt-3.5 mt-[40rem]">
       <div className="w-full mb-24 md:p-4 md:mt-16 md:m-auto" id="charts">
         <div>
           <h1 className="text-center lg:text-left mb-16 lg:mb-4 text-4xl font-semibold tracking-[40px] lg:tracking-widest text-primary lg:text-6xl max-w-full">

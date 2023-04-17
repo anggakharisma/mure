@@ -10,7 +10,7 @@ const SongCard = ({ artistInfo }: SongCardProps) => {
   return (
     <div className="relative flex items-center justify-center w-full p-4 my-24 group">
       <div
-        className="relative mr-12 w-52 h-52 md:w-60 md:h-60"
+        className="relative mr-12 w-32 h-32 md:w-44 md:h-44"
         onClick={() => {
           setCurrentSongInfo(artistInfo);
           changeSource(artistInfo);

@@ -6,7 +6,7 @@ const Charts = () => {
     <div className="w-full mx-auto md:w-5/6 lg:mt-3.5 mt-[24rem] md:mt-[40rem]">
       <div className="w-full mb-24 md:p-4 md:mt-16 md:m-auto" id="charts">
         <div>
-          <h1 className="lg:text-left mb-16 lg:mb-4 font-semibold tracking-[32px] lg:tracking-widest text-primary lg:text-5xl text-4xl mx-auto text-center">
+          <h1 className="lg:text-left mb-16 lg:mb-4 font-semibold tracking-[32px] lg:tracking-widest text-primary lg:text-5xl md:text-4xl text-3xl mx-auto text-center">
             CHARTS
           </h1>
           <div className="flex flex-wrap items-center align-middle justify-items-stretch mb-40">

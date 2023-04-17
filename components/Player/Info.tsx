@@ -4,12 +4,12 @@ import { useContext } from "react";
 import { AudioPlayerContext } from "../../context/audioPlayerContext";
 
 export const Info = () => {
-  const { currentSongInfo, setCurrentSongInfo, changeSource } = useContext(
+  const { currentSongInfo } = useContext(
     AudioPlayerContext
   ) as AudioContextType;
   return (
     <div className="flex items-center justify-center align-middle">
-      <div className="relative w-20 h-20 mr-8">
+      <div className="relative w-16 h-16 md:w-20 md:h-20 mr-8">
         {currentSongInfo?.image ? (
           <Image
             className="rounded-full"
@@ -19,7 +19,7 @@ export const Info = () => {
             objectFit="cover"
           />
         ) : (
-          <h1 className="w-20 h-20 rounded-full bg-sub-black "></h1>
+          <h1 className="h-16 w-16 md:w-20 md:h-20 rounded-full bg-sub-black "></h1>
         )}
       </div>
       <div className="w-40 my-auto">

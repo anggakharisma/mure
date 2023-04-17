@@ -89,7 +89,7 @@ export const Control = () => {
   return (
     <div className={ControlStyle.ControlContainer}>
       <div className="flex items-center justify-center align-middle">
-        <div className="relative w-10 h-10 hover:cursor-pointer">
+        <div className="md:relative w-10 h-10 hover:cursor-pointer hidden">
           <Image
             alt="previous song"
             src="/images/prev.svg"
@@ -115,7 +115,7 @@ export const Control = () => {
             <PauseIcon className="w-1/2 m-auto text-gray-400" />
           )}
         </div>
-        <div className="relative w-10 h-10 hover:cursor-pointer">
+        <div className="w-10 h-10 hover:cursor-pointer hidden md:relative">
           <Image
             alt="previous song"
             src="/images/next.svg"
@@ -124,8 +124,8 @@ export const Control = () => {
           />
         </div>
       </div>
-      <div className="flex items-center justify-around w-full m-auto lg:w-5/6">
-        <p className="w-1/5">
+      <div className="hidden md:flex items-center justify-around w-full m-auto lg:w-5/6">
+        <p className="w-1/5 hidden md:block">
           {currentTime} / {duration}
         </p>
         <input

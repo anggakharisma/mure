@@ -7,26 +7,32 @@ import HomeStyle from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import AudioProvider from "../context/audioPlayerContext";
+import AuthModal from "../components/Auth/AuthModal";
+import { SessionProvider } from "next-auth/react";
+import { Session } from "next-auth";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
   const router = useRouter();
   if (router.pathname === "/_error") return <Component {...pageProps} />;
 
   return (
-    <AudioProvider>
-      <Head>
-        <title>MURE</title>
-      </Head>
-      <Nav />
-      <div className={HomeStyle.GradientBg}></div>
-      <Component {...pageProps} />
-      <Link href="/">
-        <div className="fixed z-30 p-2 text-white transition-transform bg-gray-700 cursor-pointer hover:scale-110 right-12 bottom-40">
-          UP
-        </div>
-      </Link>
-      <Player />
-    </AudioProvider>
+    <SessionProvider session={pageProps.session}>
+      <AudioProvider>
+        <Head>
+          <title>MURE</title>
+        </Head>
+        <Nav />
+        <div className={HomeStyle.GradientBg}></div>
+        <Component {...pageProps} />
+        <AuthModal />
+        <Link href="/">
+          <div className="fixed z-30 p-2 text-white transition-transform bg-gray-700 cursor-pointer hover:scale-110 right-12 bottom-40">
+            UP
+          </div>
+        </Link>
+        <Player />
+      </AudioProvider>
+    </SessionProvider>
   );
 }
 

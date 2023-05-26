@@ -44,8 +44,8 @@ const Hero = () => {
 
       <div className="absolute z-30 m-auto lg:block lg:relative">
         <h1
-          style={{ lineHeight: "1.5em" }}
-          className="z-30 m-auto text-5xl font-bold leading-snug tracking-widest text-center lg:w-2/4 lg:text-7xl lg:ml-28 text-primary title-shadow lg:text-left"
+          style={{ lineHeight: "1.35em" }}
+          className="z-30 m-auto text-5xl font-bold leading-snug tracking-widest text-center lg:w-2/4 lg:text-[5rem] lg:ml-0 text-primary title-shadow lg:text-left"
         >
           SHARE
           <br /> LISTEN

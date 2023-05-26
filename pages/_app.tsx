@@ -22,7 +22,6 @@ function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
           <title>MURE</title>
         </Head>
         <Nav />
-        <div className={HomeStyle.GradientBg}></div>
         <Component {...pageProps} />
         <AuthModal />
         <Link href="/">

@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+html, body {
+  background-color: #f5f5f5;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -31,7 +35,7 @@ body {
 }
 
 .title-shadow {
-	text-shadow: 12px 12px #ffe9f3;
+	text-shadow: 8px 8px #e3e3e3;
 }
 
 @media(max-width: 768px) {

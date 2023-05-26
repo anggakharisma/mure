@@ -1,15 +1,15 @@
 .hero {
 	height: 63vh;
-	z-index: -20;
-	@apply absolute top-0 flex items-center justify-center w-full p-0 m-0 align-middle lg:relative lg:w-4/6 lg:p-6 lg:m-auto lg:mt-16;
+	z-index: 20;
+	@apply absolute top-0 flex items-center justify-center w-full p-0 m-0 align-middle lg:relative lg:w-5/6 lg:p-6 lg:m-auto lg:mt-10;
 }
 
 .hero_image_container {
-	@apply relative z-0 w-full h-full m-auto;
+	@apply relative z-0 w-full h-full m-auto mr-0;
 	clip-path: circle(42% at 50% 50%);
 	background-color: #ffffc2;
 	border-bottom: 24px solid #ffffc2;
-	width: 60vw;
+	width: 30vw;
 }
 
 

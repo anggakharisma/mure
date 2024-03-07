@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroStyles from "../styles/Hero.module.css";
+import Button from "./Button/Button";
 import Triangle from "./Triangle";
 
 const randomDuration = (): number =>
@@ -9,7 +10,7 @@ const Hero = () => {
   return (
     <div className={HeroStyles.hero}>
       <Triangle
-        color="#9CCFE8"
+        color="#1CADFF"
         strokeWidth={7}
         width={104}
         position="top-0 right-10"
@@ -17,7 +18,7 @@ const Hero = () => {
       />
 
       <Triangle
-        color="#00FFB3"
+        color="#00FF75"
         strokeWidth={14}
         width={50}
         position="top-18 right-52"
@@ -25,7 +26,7 @@ const Hero = () => {
       />
 
       <Triangle
-        color="#F5A9CB"
+        color="#FF59A3"
         strokeWidth={7}
         width={104}
         position="right-1/2 bottom-0"

@@ -3,7 +3,7 @@ import HeroStyles from "../styles/Hero.module.css";
 import Triangle from "./Triangle";
 
 const randomDuration = (): number =>
-  Math.floor(Math.random() * (5 - 1 + 3)) + 3;
+  Math.floor(Math.random() * (4 - 1 + 2)) + 2;
 
 const Hero = () => {
   return (

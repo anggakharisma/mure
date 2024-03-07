@@ -4,6 +4,8 @@
 
 Welcome to MURE, a SoundCloud-like clone built with Next.js and styled using Tailwind CSS. 🎧🚀
 
+## Design 
+![Figma Link](https://www.figma.com/file/ETjswGxRJGd4sWj6SN6ZGW/MURE?type=design&node-id=0%3A1&mode=design&t=JOgWoLzzQ7lkuCoW-1)
 ## Demo
 
 Check out the live demo of MURE [here](https://mure.vercel.app/). Feel free to explore 🎉🎶

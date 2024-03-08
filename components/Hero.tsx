@@ -9,6 +9,9 @@ const randomDuration = (): number =>
 const Hero = () => {
   return (
     <div className={HeroStyles.hero}>
+      <div className="absolute top-1/2 left-1/2 h-full w-[100vw] -translate-x-1/2 -translate-y-1/2">
+        <Image src="/images/hero-graph.svg" alt="decoration" layout="fill" />
+      </div>
       <Triangle
         color="#1CADFF"
         strokeWidth={7}
@@ -21,7 +24,7 @@ const Hero = () => {
         color="#00FF75"
         strokeWidth={14}
         width={50}
-        position="top-18 right-52"
+        position="top-18 right-0"
         duration={randomDuration()}
       />
 
@@ -34,7 +37,6 @@ const Hero = () => {
       />
 
       <div className={HeroStyles.hero_image_container}>
-        <div className="absolute z-10 block w-full h-full opacity-[72.5%] lg:opacity-0 bg-dark-primary lg:relative lg:none"></div>
         <Image
           src="/images/hero__image.jpg"
           alt="hero image left"
@@ -43,10 +45,11 @@ const Hero = () => {
         />
       </div>
 
-      <div className="absolute z-30 m-auto lg:block lg:relative">
+      <div className="z-30 mx-auto lg:block lg:relative">
         <h1
-          style={{ lineHeight: "1.35em" }}
-          className="z-30 m-auto text-5xl font-bold leading-snug tracking-widest text-center lg:w-2/4 lg:text-[5rem] lg:ml-0 text-primary title-shadow lg:text-left"
+          data-text="SHARE LISTEN DISCOVER"
+          style={{ lineHeight: "1.3em" }}
+          className="z-30 mx-auto font-black leading-snug text-center lg:w-2/4 lg:text-[96px] lg:ml-0 text-accent title-shadow lg:text-left tracking-wider"
         >
           SHARE
           <br /> LISTEN

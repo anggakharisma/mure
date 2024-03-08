@@ -16,6 +16,9 @@ module.exports = {
 
         "light-gradient-first": "#FCF2FF",
         "light-gradient-second": "#E2FFF5",
+
+
+        "light-font-color": "#3F3F3F"
       }
     }
   },

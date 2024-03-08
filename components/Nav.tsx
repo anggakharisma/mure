@@ -4,8 +4,8 @@ import NavStyles from "../styles/Nav.module.css";
 
 const Nav = () => {
   return (
-    <div className="flex z-40 items-center justify-between w-5/6 p-6 m-auto my-6 align-middle md:justify-start">
-      <h1 className="my-auto mr-12 text-3xl font-black tracking-tighter text-primary">
+    <div className="flex z-40 items-center justify-between w-5/6 p-6 m-auto my-6 align-middle md:justify-start mb-0">
+      <h1 className="my-auto mr-12 text-3xl font-[900] tracking-tighter text-primary">
         MURE
       </h1>
       <ul className={NavStyles.NavLinkContainer}>
@@ -13,7 +13,7 @@ const Nav = () => {
         <div className="absolute w-full h-full rounded-full top-2 left-2 bg-accent z-20"></div>
         <div className="absolute w-full h-full rounded-full top-4 left-4 bg-secondary z-10"></div>
         <li className={NavStyles.NavLink}>
-          <p className="hover:cursor-pointer text-md">UPLOAD YOUR SONG</p>
+          <Link href="/sign-in" className="hover:cursor-pointer text-md">UPLOAD YOUR OWN SONG</Link>
         </li>
       </ul>
 

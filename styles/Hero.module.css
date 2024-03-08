@@ -1,21 +1,17 @@
 .hero {
-	height: 63vh;
 	z-index: 20;
-	@apply absolute top-0 flex items-center justify-center w-full p-0 m-0 align-middle lg:relative lg:w-5/6 lg:p-6 lg:m-auto lg:mt-10;
+	@apply absolute top-0 flex gap-x-8 items-center justify-center w-full p-0 m-0 lg:relative lg:w-9/12 lg:p-0 lg:py-20 lg:m-auto lg:mt-0 h-full;
 }
 
 .hero_image_container {
-	@apply relative z-0 w-full h-full m-auto mr-0;
-	clip-path: circle(42% at 50% 50%);
-	background-color: #ffffc2;
-	border-bottom: 24px solid #ffffc2;
-	width: 30vw;
+	@apply relative z-0 w-[400px] h-[400px] m-auto mr-0;
+	border-radius: 50%;
+	border-bottom: 20px solid #FFFF8E;
 }
 
-
 .hero_image_container img {
-	clip-path: circle(42% at 50% 50%);
-	height: 100%;
+	border-radius: 50%;
+	border-bottom: 40px solid black;
 }
 
 @media(max-width: 1024px) {

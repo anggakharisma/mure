@@ -9,8 +9,8 @@ const randomDuration = (): number =>
 const Hero = () => {
   return (
     <div className={HeroStyles.hero}>
-      <div className="absolute top-1/2 left-1/2 h-full w-[100vw] -translate-x-1/2 -translate-y-1/2">
-        <Image src="/images/hero-graph.svg" alt="decoration" layout="fill" />
+      <div className="absolute top-1/2 left-1/2 h-full w-[99vw] overflow-hidden -translate-x-1/2 -translate-y-1/2">
+        <Image  src="/images/hero-graph.svg" alt="decoration" layout="fill" />
       </div>
       <Triangle
         color="#1CADFF"

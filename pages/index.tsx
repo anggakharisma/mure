@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             return <SongCard artistInfo={info} key={index} />;
           })}
         </div>
-        <div className="flex">
+        <div className="flex mt-16">
           {newSongs.map((info: ArtistInfo, index: number) => {
             return <SongCard artistInfo={info} key={index} />;
           })}

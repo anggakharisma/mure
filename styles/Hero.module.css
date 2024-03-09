@@ -1,6 +1,6 @@
 .hero {
 	z-index: 20;
-	@apply absolute top-0 flex gap-x-8 items-center justify-center w-full p-0 m-0 lg:relative lg:w-9/12 lg:p-0 lg:py-20 lg:m-auto lg:mt-0 h-full;
+	@apply absolute top-0 flex gap-x-8 items-center justify-center w-full p-0 m-0 lg:relative lg:w-8/12 lg:p-0 lg:py-20 lg:mx-auto lg:mt-0 h-full;
 }
 
 .hero_image_container {

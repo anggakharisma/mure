@@ -14,16 +14,7 @@ const Home: NextPage = () => {
       <div className="mb-16 w-5/6 mx-auto">
         <h3 className="text-light-font-color mb-8 font-semibold text-4xl">Trending This Week</h3>
 
-        <div className="flex">
-          {newSongs.map((info: ArtistInfo, index: number) => {
-            return <SongCard artistInfo={info} key={index} />;
-          })}
-        </div>
-        <div className="flex mt-16">
-          {newSongs.map((info: ArtistInfo, index: number) => {
-            return <SongCard artistInfo={info} key={index} />;
-          })}
-        </div>
+        
       </div>
       <div className="mb-32 pb-24"></div>
     </>

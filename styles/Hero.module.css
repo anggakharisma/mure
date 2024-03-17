@@ -1,6 +1,6 @@
 .hero {
 	z-index: 20;
-	@apply absolute top-0 flex gap-x-8 items-center justify-center w-full p-0 m-0 lg:relative lg:w-8/12 lg:p-0 lg:py-20 lg:mx-auto lg:mt-0 h-full;
+	@apply relative flex gap-x-8 items-center justify-center w-full p-0 m-0 lg:relative lg:w-8/12 lg:p-0 lg:py-20 lg:mx-auto lg:mt-0 h-full mb-12;
 }
 
 .hero_image_container {
@@ -15,17 +15,10 @@
 }
 
 @media(max-width: 1024px) {
-	.hero_image_container img {
-		clip-path: none;
-	}
-
-	.hero_image_container {
-		clip-path: none;
-		border-bottom: none;
-		width: 100vw;
-	}
-
 	.hero {
-		height: 75vh;
+		@apply h-[50vh];
+	}
+	.hero_image_container {
+		display: none;
 	}
 }

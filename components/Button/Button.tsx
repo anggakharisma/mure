@@ -4,6 +4,6 @@ type ButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HT
 }
 
 export const ButtonPrimary = (props: ButtonProps) => {
-  return <button className="bg-primary p-4 px-8 text-white rounded-md text-xl" {...props}>{props.children}</button>
+  return <button className="active:bg-primary active:opacity-80 disabled:bg-gray-300 bg-primary p-4 px-8 text-white rounded-md text-xl" {...props}>{props.children}</button>
 }
 

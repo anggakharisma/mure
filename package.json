@@ -13,7 +13,6 @@
     "@heroicons/react": "^2.0.14",
     "framer-motion": "^7.6.7",
     "next": "12.3.0",
-    "next-auth": "^4.22.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-new-window": "^1.0.1"

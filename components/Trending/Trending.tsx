@@ -5,8 +5,8 @@ const Trending = () => {
   return (
     <>
       <div className="relative flex flex-wrap justify-between w-full h-full">
-        {newSongs.map(item => {
-          return <SongCard key={item.title + item.year} artistInfo={item} />
+        {newSongs.map((item, index) => {
+          return <SongCard key={index + item.title + item.year} artistInfo={item} />
         })}
       </div>
     </>

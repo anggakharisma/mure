@@ -1,11 +1,10 @@
-import type { NextPage } from "next";
 import { Search } from "../assets/icons/icons";
 import { ButtonPrimary } from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/Hero";
 import Trending from "../components/Trending/Trending";
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <>
       <Hero />

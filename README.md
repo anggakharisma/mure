@@ -1,6 +1,6 @@
 # MURE 🎵
 
-![Project preview](./preview2.png)
+![Project preview](./preview.jpg)
 
 Welcome to MURE, a SoundCloud-like clone built with Next.js and styled using Tailwind CSS. 🎧🚀
 

@@ -13,7 +13,7 @@ const Nav = () => {
         <div className="absolute w-full h-full rounded-full top-2 left-2 bg-accent z-20"></div>
         <div className="absolute w-full h-full rounded-full top-4 left-4 bg-secondary z-10"></div>
         <li className={NavStyles.NavLink}>
-          <Link href="/sign-in" className="hover:cursor-pointer text-md">UPLOAD YOUR OWN SONG</Link>
+          <Link href="/" className="hover:cursor-pointer text-md">UPLOAD YOUR OWN SONG</Link>
         </li>
       </ul>
 

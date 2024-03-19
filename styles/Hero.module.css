@@ -16,7 +16,7 @@
 
 @media(max-width: 1024px) {
 	.hero {
-		@apply h-[50vh];
+		@apply h-[30vh];
 	}
 	.hero_image_container {
 		display: none;

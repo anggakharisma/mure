@@ -9,8 +9,8 @@ const randomDuration = (): number =>
 const Hero = () => {
   return (
     <div className={HeroStyles.hero}>
-      <div className="absolute top-1/2 left-1/2 h-full w-[99vw] overflow-hidden -translate-x-1/2 -translate-y-1/2">
-        <Image  src="/images/hero-graph.svg" alt="decoration" layout="fill" />
+      <div className="absolute top-1/2 left-1/2 h-full w-[90vw] lg:w-[99vw] overflow-hidden -translate-x-1/2 -translate-y-1/2">
+        <Image src="/images/hero-graph.svg" alt="decoration" layout="fill" />
       </div>
       <Triangle
         color="#1CADFF"
@@ -24,7 +24,7 @@ const Hero = () => {
         color="#00FF75"
         strokeWidth={14}
         width={50}
-        position="top-18 right-0"
+        position="top-18 right-20"
         duration={randomDuration()}
       />
 
@@ -49,7 +49,7 @@ const Hero = () => {
         <h1
           data-text="SHARE LISTEN DISCOVER"
           style={{ lineHeight: "1.3em" }}
-          className="z-30 mx-auto font-black leading-snug text-center lg:w-2/4 lg:text-[96px] lg:ml-0 text-accent title-shadow lg:text-left tracking-wider"
+          className="z-30 mx-auto font-black leading-snug text-center lg:w-2/4 lg:text-[96px] lg:ml-0 text-accent text-6xl lg:text-7xl title-shadow lg:text-left tracking-wider"
         >
           SHARE
           <br /> LISTEN

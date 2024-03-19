@@ -7,17 +7,20 @@ const SongCard = ({ artistInfo }: SongCardProps) => {
   const { changeSource, setCurrentSongInfo } = useContext(
     AudioPlayerContext
   ) as AudioContextType;
+
   return (
-    <div className="relative flex w-full py-4 my-0 group">
+    <div className="relative w-full py-4 my-0 group">
       <div
-        className="relative mr-12 w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52"
+        className="relative mr-12 w-full h-60 md:w-72 md:h-72 mb-2"
         onClick={() => {
           setCurrentSongInfo(artistInfo);
           changeSource(artistInfo);
         }}
       >
         <div className="top-0 bottom-0 left-0 z-10 w-full h-full transition-all bg-black opacity-0 none group-hover:opacity-40 group-hover:absolute hover:cursor-pointer"></div>
-        <Image layout="fill" src={image} objectFit="cover" alt="whatever" />
+        <div>
+          <Image layout="fill" src={image} objectFit="cover" alt={`${artistName} cover`} />
+        </div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-4xl bg-dark-primary border-white border-solid  border-2 rounded-full p-4 opacity-85 hover:cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +40,7 @@ const SongCard = ({ artistInfo }: SongCardProps) => {
       </div>
       <div>
         <p className="font-medium text-primary">{artistName}</p>
-        <p className="my-1 font-semibold text-sub-black">{title}</p>
+        <p className="font-semibold text-sub-black">{title}</p>
         <p className="text-sub-black">{year}</p>
       </div>
     </div>

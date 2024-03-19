@@ -19,7 +19,14 @@ export const newSongs: ArtistInfo[] = [
     image: "/images/pixel_galaxy.webp",
     year: "2017",
     source: "/songs/pixel_galaxy.mp3"
-  }
+  },
+  {
+    artistName: "Mameyudoufu",
+    title: "Wave",
+    image: "/images/wave.jpg",
+    year: "2019",
+    source: "/songs/wave.mp3"
+  },
 ];
 
 export const featuredSongs: ArtistInfo[] = [

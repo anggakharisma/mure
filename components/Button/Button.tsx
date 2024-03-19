@@ -1,10 +1,9 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react"
 
-type ButtonProps  = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
+type ButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
 }
 
-const Button = (props: ButtonProps) => {
-  return <button {...props}></button>
+export const ButtonPrimary = (props: ButtonProps) => {
+  return <button className="bg-primary p-4 px-8 text-white rounded-md text-xl" {...props}>{props.children}</button>
 }
 
-export default Button;

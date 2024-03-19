@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeroStyles from "../styles/Hero.module.css";
-import Button from "./Button/Button";
+import ButtonPrimary from "./Button/Button";
 import Triangle from "./Triangle";
 
 const randomDuration = (): number =>

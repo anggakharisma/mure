@@ -9,9 +9,9 @@ const SongCard = ({ artistInfo }: SongCardProps) => {
   ) as AudioContextType;
 
   return (
-    <div className="relative w-full py-4 my-0 group">
+    <div className="relative w-full md:w-auto group">
       <div
-        className="relative mr-12 w-full h-60 md:w-72 md:h-72 mb-2"
+        className="relative md:my-0 mr-12 w-full h-72 lg:w-72 lg:h-72"
         onClick={() => {
           setCurrentSongInfo(artistInfo);
           changeSource(artistInfo);
@@ -38,10 +38,9 @@ const SongCard = ({ artistInfo }: SongCardProps) => {
           </svg>
         </div>
       </div>
-      <div>
-        <p className="font-medium text-primary">{artistName}</p>
-        <p className="font-semibold text-sub-black">{title}</p>
-        <p className="text-sub-black">{year}</p>
+      <div className="my-4">
+        <p className="font-bold text-light-font-color">{artistName}</p>
+        <p className="font-normal text-light-font-color">{title}</p>
       </div>
     </div>
   );

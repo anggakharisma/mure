@@ -49,7 +49,7 @@ const Hero = () => {
         <h1
           data-text="SHARE LISTEN DISCOVER"
           style={{ lineHeight: "1.3em" }}
-          className="z-30 mx-auto font-black leading-snug text-center lg:w-2/4 lg:text-[96px] lg:ml-0 text-accent text-6xl lg:text-7xl title-shadow lg:text-left tracking-wider"
+          className="z-30 mx-auto font-black leading-snug text-center lg:w-2/4 lg:text-[96px] lg:ml-0 text-accent text-6xl title-shadow lg:text-left tracking-wider"
         >
           SHARE
           <br /> LISTEN

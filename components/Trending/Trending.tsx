@@ -4,13 +4,7 @@ import SongCard from '../SongCard/SongCard';
 const Trending = () => {
   return (
     <>
-      <div className="block lg:flex">
-        {newSongs.map(item => {
-          return <SongCard key={item.title + item.year} artistInfo={item} />
-        })}
-      </div>
-
-      <div className="block lg:flex">
+      <div className="relative flex flex-wrap justify-between w-full h-full">
         {newSongs.map(item => {
           return <SongCard key={item.title + item.year} artistInfo={item} />
         })}

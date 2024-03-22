@@ -17,7 +17,7 @@ const Nav = () => {
         </li>
       </ul>
 
-      <div className="hidden h-full cursor-pointer sm:block md:hidden">
+      <div className="h-full cursor-pointer block lg:hidden">
         <div className="w-2 h-2 rounded-full bg-primary"></div>
         <div className="w-2 h-2 my-2 rounded-full bg-secondary"></div>
         <div className="w-2 h-2 rounded-full bg-accent"></div>

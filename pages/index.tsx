@@ -8,7 +8,7 @@ import Modal from "../components/Modal/Modal";
 import Trending from "../components/Trending/Trending";
 
 const Home = () => {
-  const [authModalVisible, setAuthModalVisible] = useState(true);
+  const [authModalVisible, setAuthModalVisible] = useState(false);
   return (
     <>
       <Hero />

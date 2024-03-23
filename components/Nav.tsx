@@ -50,7 +50,9 @@ const Nav = () => {
                     <Input type="password" name="password" placeholder="Password" />
                   </div>
                   <div className="flex flex-col gap-y-4 mb-4">
-                    <ButtonPrimary type="submit">
+                  <ButtonPrimary onClick={() => {
+                    console.log(process.env.NEXT_PUBLIC_API_URL);
+                  }} type="submit">
                       Sign In
                     </ButtonPrimary>
                     <ButtonPrimary type="submit">

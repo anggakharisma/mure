@@ -1,10 +1,50 @@
 import Link from "next/link";
+import { useState } from "react";
 
 import NavStyles from "../styles/Nav.module.css";
+import { ButtonPrimary } from "./Button/Button";
+import Input from "./Input/Input";
+import Modal from "./Modal/Modal";
 
 const Nav = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="flex z-40 items-center justify-between w-5/6 p-6 m-auto my-6 align-middle md:justify-start mb-0">
+
+      <Modal isVisible={showModal}>
+        <div>
+          <div className="relative bg-white w-full mx-auto rounded-md pb-8">
+            <p onClick={() => setShowModal(false)} className="hover:cursor-pointer absolute -right-10 top-2 p-2 text-2xl text-white">X</p>
+
+            <div className="flex gap-16 pt-4 px-8 justify-around items-center align-middle border-gray-200 border-b-[2px]">
+              <h4 className="font-bold text-xl pb-4 text-primary border-primary border-b-[4px] hover:cursor-pointer">Register</h4>
+              <h4 className="font-bold text-xl pb-4 text-primary hover:cursor-pointer">Sign In</h4>
+            </div>
+            <div className="py-8">
+              <h4 className="font-bold text-center text-4xl text-gray-700">Join Us</h4>
+              <h4 className="text-md text-center text-gray-600">Start sharing your own song</h4>
+            </div>
+            <div className="w-full px-8">
+              <form className="flex flex-col" onSubmit={(e) => { e.preventDefault() }}>
+                <div className="flex flex-col gap-y-6 mb-8">
+                  <Input name="name" placeholder="Name" />
+                  <Input name="email" placeholder="Email" />
+                  <Input name="password" placeholder="Password" />
+                </div>
+                <div className="flex flex-col gap-y-4 mb-4">
+                  <ButtonPrimary type="submit">
+                    Register
+                  </ButtonPrimary>
+                  <ButtonPrimary type="submit">
+                    Register with G
+                  </ButtonPrimary>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </Modal>
       <h1 className="my-auto mr-12 text-3xl font-[900] tracking-tighter text-primary">
         MURE
       </h1>
@@ -13,7 +53,7 @@ const Nav = () => {
         <div className="absolute w-full h-full rounded-full top-2 left-2 bg-accent z-20"></div>
         <div className="absolute w-full h-full rounded-full top-4 left-4 bg-secondary z-10"></div>
         <li className={NavStyles.NavLink}>
-          <Link href="/" className="hover:cursor-pointer text-md">UPLOAD YOUR OWN SONG</Link>
+          <p onClick={() => { setShowModal(true) }} className="hover:cursor-pointer text-md">UPLOAD YOUR OWN SONG</p>
         </li>
       </ul>
 

@@ -5,7 +5,7 @@ const Footer = () => {
         MURE
       </h1>
       <div className="relative w-full ml-0 md:ml-8 h-full p-8 rounded-lg  my-12 bg-primary before:w-full before:h-full before:-top-4 before:-right-4 before:bg-accent before:absolute before:-z-10 before:rounded-lg after:w-full after:h-full after:-top-8 after:-right-8 after:bg-secondary after:absolute after:-z-20 after:rounded-lg">
-        <div className="flex gap-8">
+        <div className="flex gap-16">
           <div>
             <h2 className="text-white font-bold text-lg mb-2">SITE</h2>
             <p className="text-white">Jobs</p>
@@ -16,6 +16,7 @@ const Footer = () => {
             <p className="text-white">Developers</p>
             <p className="text-white">Privacy Policy</p>
             <p className="text-white">Cookie Policy</p>
+            <p className="text-white">Terms &amp; Conditions</p>
           </div>
         </div>
       </div>

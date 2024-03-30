@@ -2,8 +2,6 @@ import { Search } from "../assets/icons/icons";
 import { ButtonPrimary } from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/Hero";
-import Input from "../components/Input/Input";
-import Modal from "../components/Modal/Modal";
 import Trending from "../components/Trending/Trending";
 
 const Home = () => {

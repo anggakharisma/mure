@@ -18,12 +18,18 @@ const Nav = () => {
           <div className="flex flex-col relative min-w-[160px] min-h-[68vh] bg-white w-full mx-auto rounded-md pb-8">
             <p onClick={() => setShowModal(false)} className="hover:cursor-pointer absolute -right-16 top-2 p-2 text-4xl text-white">X</p>
 
-            <div className="flex gap-16 pt-4 px-8 justify-around items-center align-middle border-gray-200 border-b-[2px]">
-              <h4 onClick={() => setActiveTab(0)} className={`font-bold text-xl pb-4 text-primary border-primary ${activeTab == 0 ? 'border-b-[4px]' : ' '}  hover:cursor-pointer`}>Register</h4>
-              <h4 onClick={() => setActiveTab(1)} className={`font-bold text-xl pb-4 text-primary border-primary ${activeTab == 1 ? 'border-b-[4px]' : ' '}  hover:cursor-pointer`}>Sign In</h4>
+            <div className="relative flex gap-16 pt-4 px-8 justify-around items-center align-middle border-b-[2px]">
+              {
+                //  !TODO: This sucks change this, if we have more than two
+                //  items this will not work
+              }
+              <div className={`absolute left-0 ${activeTab == 0 ? 'translate-x-16 ml-1' : 'translate-x-64 ml-6'} bottom-0 w-20 h-1 bg-primary transition-all`}></div>
+
+              <h4 onClick={() => setActiveTab(0)} className={`font-bold text-xl pb-4 text-primary hover:cursor-pointer`}>Register</h4>
+              <h4 onClick={() => setActiveTab(1)} className={`font-bold text-xl pb-4 text-primary hover:cursor-pointer`}>Sign In</h4>
             </div>
             <div className="py-8">
-              <h4 className="font-bold text-center text-4xl text-gray-700">Join Us</h4>
+              <h4 className="font-bold text-center text-4xl text-sub-black">Join Us</h4>
               <h4 className="text-md text-center text-gray-600">Start sharing your own song</h4>
             </div>
             <div className="w-full px-8">
@@ -50,9 +56,9 @@ const Nav = () => {
                     <Input type="password" name="password" placeholder="Password" />
                   </div>
                   <div className="flex flex-col gap-y-4 mb-4">
-                  <ButtonPrimary onClick={() => {
-                    console.log(process.env.NEXT_PUBLIC_API_URL);
-                  }} type="submit">
+                    <ButtonPrimary onClick={() => {
+                      console.log(process.env.NEXT_PUBLIC_API_URL);
+                    }} type="submit">
                       Sign In
                     </ButtonPrimary>
                     <ButtonPrimary type="submit">

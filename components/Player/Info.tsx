@@ -26,7 +26,7 @@ export const Info = () => {
         <h2 className={InfoStyle.SongTitle}>
           {currentSongInfo?.title || "No Song"}
         </h2>
-        <h3 className="font-light text-gray-500">
+        <h3 className="font-light text-sub-black">
           {currentSongInfo?.artistName || "No Artist"}
         </h3>
       </div>

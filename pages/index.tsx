@@ -1,3 +1,5 @@
+import Hls from "hls.js";
+import { useEffect, useRef, useState } from "react";
 import { Search } from "../assets/icons/icons";
 import { ButtonPrimary } from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
@@ -5,8 +7,31 @@ import Hero from "../components/Hero";
 import Trending from "../components/Trending/Trending";
 
 const Home = () => {
+  const vidRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const hls = new Hls();
+    hls.loadSource(`${process.env.NEXT_PUBLIC_API_URL}/2024_40_30_jDd4S2XF_pixel_galaxy.mp3.m3u8`);
+    if (vidRef.current !== null) {
+      hls.attachMedia(vidRef.current);
+      vidRef.current.volume = 0.8;
+      vidRef.current.play();
+      setIsPlaying(true);
+
+    }
+  }, [vidRef]);
   return (
     <>
+      {
+        // <video ref={vidRef}></video>
+        // <button onClick={() => {
+        //   if (isPlaying) { vidRef.current?.pause(); setIsPlaying(false) }
+        //   else {
+        //     vidRef.current?.play(); setIsPlaying(true)
+        //   }
+        // }}>PRESS THIS0</button>
+      }
       <Hero />
       <form onSubmit={(e) => {
         e.preventDefault();

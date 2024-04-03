@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useContext, useEffect, useRef, useState } from "react";
+import { UserContext, UserContextType } from "../context/userContext";
 import { headersDefault } from "../helpers/header";
 
 import NavStyles from "../styles/Nav.module.css";
@@ -10,6 +11,7 @@ import Modal from "./Modal/Modal";
 
 const Nav = () => {
   const router = useRouter();
+  const { user, setUser, getFromLocalStorage } = useContext(UserContext) as UserContextType;
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [respMessage, setRespMessage] = useState('');
@@ -19,6 +21,7 @@ const Nav = () => {
     password: '',
     name: ''
   });
+
 
   const handleInputChange = (e: FormEvent<EventTarget>) => {
     e.preventDefault();
@@ -31,6 +34,7 @@ const Nav = () => {
       }
     });
   }
+
 
   const onSubmitRegister = async (event: any) => {
     event.preventDefault();
@@ -63,6 +67,11 @@ const Nav = () => {
       if (!regReq.ok) throw regResp;
 
       setRespMessage(regResp.message);
+      setUser({
+        email: regResp.userInfo.email,
+        token: regResp.token,
+      });
+
       setShowModal(false);
       router.push('/dashboard');
     } catch (e: any) {
@@ -144,7 +153,7 @@ const Nav = () => {
         </div>
       </Modal>
       <Link href='/'>
-        <h1 className="my-auto mr-12 text-3xl font-[900] tracking-tighter text-primary">
+        <h1 className="my-auto mr-12 text-3xl font-[900] tracking-tighter text-primary hover:cursor-pointer">
           MURE
         </h1>
       </Link>
@@ -152,9 +161,21 @@ const Nav = () => {
         <div className="absolute w-full h-full rounded-full bg-primary left-0 top-0 z-30"></div>
         <div className="absolute w-full h-full rounded-full top-2 left-2 bg-accent z-20"></div>
         <div className="absolute w-full h-full rounded-full top-4 left-4 bg-secondary z-10"></div>
-        <li className={NavStyles.NavLink}>
-          <p onClick={() => { setShowModal(true) }} className="hover:cursor-pointer text-md">UPLOAD YOUR OWN SONG</p>
-        </li>
+        {user === null ?
+          <li className={NavStyles.NavLink}>
+            <p onClick={() => { setShowModal(true) }} className="hover:cursor-pointer text-md">UPLOAD YOUR OWN SONG</p>
+          </li> :
+          <>
+            <li className={NavStyles.NavLink}>
+              <Link href="/dashboard" className="hover:cursor-pointer text-md">DASHBOARD</Link>
+            </li>
+            <li className={NavStyles.NavLink}>
+              <Link href="/profile" className="hover:cursor-pointer text-md">PROFILE</Link>
+            </li>
+          </>
+
+        }
+
       </ul>
 
       <div className="h-full cursor-pointer block lg:hidden">

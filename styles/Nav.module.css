@@ -1,9 +1,9 @@
 .NavLink {
-	@apply p-1 mx-8 text-sm font-semibold transition-all hover:bg-secondary z-50 relative;
+	@apply p-1 text-sm font-semibold transition-all hover:bg-secondary z-50 relative;
 	letter-spacing: 0.5px;
 }
 
 .NavLinkContainer {
-	@apply hidden p-4 my-auto text-white rounded-full lg:flex;
+	@apply hidden p-4 my-auto text-white rounded-full lg:flex px-16 gap-10;
 	position: relative;
 }

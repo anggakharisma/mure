@@ -4,6 +4,7 @@ import { createContext, Dispatch, SetStateAction, useEffect, useState } from "re
 type User = {
   email: string;
   token: string;
+  id: string;
 };
 
 export type UserContextType = {

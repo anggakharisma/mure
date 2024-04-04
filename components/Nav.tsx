@@ -11,7 +11,7 @@ import Modal from "./Modal/Modal";
 
 const Nav = () => {
   const router = useRouter();
-  const { user, setUser, getFromLocalStorage } = useContext(UserContext) as UserContextType;
+  const { user, setUser } = useContext(UserContext) as UserContextType;
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [respMessage, setRespMessage] = useState('');
@@ -21,7 +21,6 @@ const Nav = () => {
     password: '',
     name: ''
   });
-
 
   const handleInputChange = (e: FormEvent<EventTarget>) => {
     e.preventDefault();
@@ -34,7 +33,6 @@ const Nav = () => {
       }
     });
   }
-
 
   const onSubmitRegister = async (event: any) => {
     event.preventDefault();
@@ -69,6 +67,7 @@ const Nav = () => {
       setRespMessage(regResp.message);
       setUser({
         email: regResp.userInfo.email,
+        id: regResp.userInfo.id,
         token: regResp.token,
       });
 
@@ -167,13 +166,9 @@ const Nav = () => {
           </li> :
           <>
             <li className={NavStyles.NavLink}>
-              <Link href="/dashboard" className="hover:cursor-pointer text-md">DASHBOARD</Link>
-            </li>
-            <li className={NavStyles.NavLink}>
-              <Link href="/profile" className="hover:cursor-pointer text-md">PROFILE</Link>
+              <Link href={`/profile/${user.id}`} className="hover:cursor-pointer text-md">UPLOAD SONG</Link>
             </li>
           </>
-
         }
 
       </ul>

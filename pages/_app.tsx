@@ -23,11 +23,6 @@ function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
         <Nav />
         <Component {...pageProps} />
         <AuthModal />
-        <Link href="/">
-          <div className="fixed z-30 p-2 text-white transition-transform bg-gray-700 cursor-pointer hover:scale-110 right-12 bottom-40">
-            UP
-          </div>
-        </Link>
         <Player />
       </AudioProvider>
     </UserProvider>

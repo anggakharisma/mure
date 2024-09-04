@@ -1,9 +1,9 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import ControlStyle from "../../styles/Control.module.css";
-import Image from "next/image";
-import { PLAYER_STATE } from "../../enum";
-import { AudioPlayerContext } from "../../context/audioPlayerContext";
 import { PauseIcon, PlayIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import { useContext, useEffect, useRef, useState } from "react";
+import { AudioPlayerContext } from "../../context/audioPlayerContext";
+import { PLAYER_STATE } from "../../enum";
+import ControlStyle from "../../styles/Control.module.css";
 
 // Reference
 // https://stackoverflow.com/questions/49814828/javascript-html5-audio-custom-players-seekbar-and-current-time
@@ -28,7 +28,7 @@ export const Control = () => {
     volumeSliderRef.current!.addEventListener("wheel", (e) =>
       e.preventDefault()
     );
-    window.addEventListener("keydown", function (e) {
+    window.addEventListener("keydown", function(e) {
       if (e.code == "Space") e.preventDefault();
     });
 
@@ -109,7 +109,7 @@ export const Control = () => {
           onClick={audioPlayController}
         >
           {playerState == PLAYER_STATE.PAUSE ||
-          playerState == PLAYER_STATE.STOP ? (
+            playerState == PLAYER_STATE.STOP ? (
             <PlayIcon className="w-1/2 m-auto text-gray-400" />
           ) : (
             <PauseIcon className="w-1/2 m-auto text-gray-400" />
@@ -117,7 +117,7 @@ export const Control = () => {
         </div>
         <div className="w-10 h-10 hover:cursor-pointer hidden md:block relative">
           <Image
-            alt="previous song"
+            alt="Next song"
             src="/images/next.svg"
             layout="fill"
             objectFit="contain"
@@ -125,7 +125,7 @@ export const Control = () => {
         </div>
       </div>
       <div className="hidden md:flex items-center justify-around w-full m-auto lg:w-5/6">
-        <p className="w-1/5 hidden md:block">
+        <p className="w-1/5 hidden text-md md:block">
           {currentTime} / {duration}
         </p>
         <input
@@ -161,7 +161,6 @@ export const Control = () => {
           max="1"
           step="0.01"
           onChange={(e) => {
-            console.log(e.target.value);
             setVolume(Number(e.target.value));
           }}
           onWheel={(e) => {

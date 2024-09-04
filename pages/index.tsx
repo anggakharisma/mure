@@ -43,7 +43,7 @@ const Home = () => {
         </ButtonPrimary>
       </form>
       <div className="mb-16 w-5/6 mx-auto h-full">
-        <h3 className="text-light-font-color mb-4 font-semibold text-4xl">Trending This Week</h3>
+        <h3 className="text-light-font-color mb-8 font-semibold text-4xl">Trending This Week</h3>
         <Trending />
       </div>
       <Footer />

@@ -8,15 +8,15 @@ const Footer = () => {
         <div className="flex gap-16">
           <div>
             <h2 className="text-white font-bold text-lg mb-2">SITE</h2>
-            <p className="text-white">Jobs</p>
-            <p className="text-white">Artist</p>
+            <p className="text-white text-sm">Jobs</p>
+            <p className="text-white text-sm">Artist</p>
           </div>
           <div>
             <h2 className="text-white font-bold text-lg mb-2">HELP</h2>
-            <p className="text-white">Developers</p>
-            <p className="text-white">Privacy Policy</p>
-            <p className="text-white">Cookie Policy</p>
-            <p className="text-white">Terms &amp; Conditions</p>
+            <p className="text-white text-sm">Developers</p>
+            <p className="text-white text-sm">Privacy Policy</p>
+            <p className="text-white text-sm">Cookie Policy</p>
+            <p className="text-white text-sm">Terms &amp; Conditions</p>
           </div>
         </div>
       </div>

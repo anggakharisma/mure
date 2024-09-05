@@ -44,7 +44,10 @@ const Home = () => {
       </form>
       <div className="mb-16 w-5/6 mx-auto h-full">
         <h3 className="text-light-font-color mb-8 font-semibold text-4xl">Trending This Week</h3>
-        <Trending />
+        <div className="grid grid-rows-1 gap-4">
+          <Trending />
+          <Trending />
+        </div>
       </div>
       <Footer />
       <div className="mb-20 pb-4"></div>

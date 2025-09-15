@@ -1,17 +1,17 @@
 .hero {
 	z-index: 20;
 	@apply relative flex gap-x-8 items-center justify-center w-full p-0 m-0 lg:relative lg:w-8/12 lg:p-0 lg:py-20 lg:mx-auto lg:mt-0 h-full mb-8;
+	border-radius: 8px;
+	margin-top: 16px;
 }
 
 .hero_image_container {
-	@apply relative z-0 w-[400px] h-[400px] m-auto mr-0;
-	border-radius: 50%;
-	border-bottom: 20px solid #FFFF8E;
+	@apply relative z-0 w-[420px] h-[420px] m-auto mr-0;
+	border-radius: 40px;
 }
 
 .hero_image_container img {
-	border-radius: 50%;
-	border-bottom: 40px solid black;
+	border-radius: 40px;
 }
 
 @media(max-width: 1024px) {

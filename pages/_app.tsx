@@ -18,6 +18,10 @@ function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
     <UserProvider>
       <AudioProvider>
         <Head>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          />
           <title>MURE</title>
         </Head>
         <Nav />

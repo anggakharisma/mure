@@ -81,7 +81,7 @@ const Nav = () => {
   }
 
   return (
-    <div className="flex z-40 items-center justify-between w-5/6 p-6 m-auto my-6 align-middle md:justify-start mb-0">
+    <div className="flex z-40 items-center justify-between w-5/6 p-6 m-auto my-2 align-middle md:justify-start mb-0">
       <Modal isVisible={showModal}>
         <div>
           <div className="flex flex-col relative min-w-[160px] bg-white w-full mx-auto rounded-md pb-8 transition-all">

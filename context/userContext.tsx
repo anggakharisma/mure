@@ -1,5 +1,4 @@
-import { getFontDefinitionFromManifest } from "next/dist/server/font-utils";
-import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react"
+import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type User = {
   email: string;
@@ -24,19 +23,19 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (user !== null)
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('m_user', JSON.stringify(user));
   }, [user])
 
 
   const saveToLocalStorage = () => {
     if (user !== null) {
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('m_user', JSON.stringify(user));
     }
   }
 
   const getFromLocalStorage = () => {
     // @ts-ignore
-    setUser(JSON.parse(localStorage.getItem('user')));
+    setUser(JSON.parse(localStorage.getItem('m_user')));
   }
 
   useEffect(() => {

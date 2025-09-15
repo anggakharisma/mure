@@ -42,6 +42,8 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
         />
+        <div className="absolute -bottom-4 -z-10 left-0 right-0 h-40 bg-red-400 rounded-2xl" />
+        <div className="absolute -bottom-8 -z-20 left-0 right-0 h-40 bg-primary rounded-2xl" />
       </div>
 
       <div className="z-30 mx-auto lg:block lg:relative">
